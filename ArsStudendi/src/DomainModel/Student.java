@@ -58,7 +58,7 @@ public class Student {
 		}
 
 	}
-	
+	//
 //	public boolean startActivity(Activity newActivity){
 //		
 //		if (currentActivity = null){
