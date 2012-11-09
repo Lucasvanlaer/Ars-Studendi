@@ -23,7 +23,6 @@ public boolean isAchieved(){
 public void setMilestoneName(String name){
 	this.name=name;
 }
-//setMilestoneType: nodig?? 
 public Activity getActivity(){
 	return activity;
 }
