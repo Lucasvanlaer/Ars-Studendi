@@ -6,10 +6,12 @@ public abstract class Activity {
 	private Calendar startTime;
 	private Calendar stopTime;
 	private long UserID;
+	private String name;
 	
-	public Activity(Calendar start, long UserID){
-		this.startTime = start;
+	public Activity(Calendar startTime, long UserID, String name){
+		this.startTime = startTime;
 		stopTime = null;
+		this.name = name;
 	}
 
 	public long getUserID(){
@@ -34,6 +36,16 @@ public abstract class Activity {
 		return stopTime.getTimeInMillis()-startTime.getTimeInMillis();
 			
 			
+	}
+	
+	public String getName(){
+		
+		return name;
+		
+	}
+	
+	public void setName(String newName){
+		name = newName;
 	}
 			
 }
