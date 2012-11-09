@@ -27,7 +27,10 @@ public class Student {
 		milestoneList = null;
 		courses = null;
 	}
-
+public String getEmailAdress()
+{
+	return emailAdress;
+}
 	public String getUserName(){
 		return studentName;
 	}
