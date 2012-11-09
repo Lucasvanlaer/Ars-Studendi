@@ -65,7 +65,7 @@ public class Student {
 
 	public boolean startActivity(Activity newActivity){
 		
-		if (currentActivity = null){
+		if (currentActivity == null){
 			this.currentActivity = newActivity;
 			return true;
 		}
@@ -75,7 +75,7 @@ public class Student {
 	}
 	
 	public boolean stopActivity(){
-		if(currentActivity = null){
+		if(currentActivity == null){
 			return false;
 		}
 		
@@ -86,7 +86,7 @@ public class Student {
 	}
 	
 	public boolean cancelActivity(){
-		if(currentActivity =null){
+		if(currentActivity == null){
 			return false;
 		}
 		
