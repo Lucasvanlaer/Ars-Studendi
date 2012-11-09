@@ -13,9 +13,11 @@ public class Student {
 	private List<Activity> oldActivityList;
 	private Activity currentActivity;
 	private String emailAdress;
+	private StudyProgram studyProgram;
 	
-	public Student(String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
+	public Student(StudyProgram studyPorgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
 		this.studentName = studentName;
+		this.studyProgram = studyProgram;
 		this.studentID = studentID;
 		this.password = password;
 		this.courses = courses;
