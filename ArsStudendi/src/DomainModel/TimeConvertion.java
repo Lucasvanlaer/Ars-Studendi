@@ -3,8 +3,8 @@ package DomainModel;
 public class TimeConvertion {
 
 
-	public String timeConvertion(long TimePassed)
-	{
+	public String timeConvertion(long TimePassed){
+	// return string with the time elapsed
 	long TimeP = TimePassed;
 	long secondM = 1000;
 	long minuteM = secondM * 60;
