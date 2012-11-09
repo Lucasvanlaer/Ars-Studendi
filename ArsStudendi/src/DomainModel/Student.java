@@ -1,11 +1,12 @@
 package DomainModel;
 import java.io.IOException;
 import java.util.*;
+import javax.persistence.*;
 //
 public class Student {
 
 	private String studentName;
-	private long studentID;
+	@Id private long studentID;
 	private String password;
 	private List<Course> courses;
 	private List<Milestone> milestoneList;
