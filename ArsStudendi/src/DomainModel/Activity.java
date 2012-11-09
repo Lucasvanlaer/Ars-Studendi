@@ -34,9 +34,9 @@ public abstract class Activity {
 		}
 		
 		return stopTime.getTimeInMillis()-startTime.getTimeInMillis();
-			
-			
+						
 	}
+	
 	
 	public String getName(){
 		
