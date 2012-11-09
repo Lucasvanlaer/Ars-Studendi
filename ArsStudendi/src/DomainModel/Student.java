@@ -12,12 +12,14 @@ public class Student {
 	private List<Milestone> milestoneList;
 	private List<Activity> oldActivityList;
 	private Activity currentActivity;
+	private String emailAdress;
 	
-	public Student(String studentName, long studentID, String password, List<Course> courses) {
+	public Student(String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
 		this.studentName = studentName;
 		this.studentID = studentID;
 		this.password = password;
 		this.courses = courses;
+		this.emailAdress = newEmailAdress;
 		currentActivity = null;
 		oldActivityList = null;
 		milestoneList = null;
@@ -57,48 +59,37 @@ public class Student {
 		if (milestoneList.contains(delMilestone)){
 			milestoneList.remove(delMilestone);
 		}
+	}
 
-	}
-	//
-//	public boolean startActivity(Activity newActivity){
-//		
-//		if (currentActivity = null){
-//			this.currentActivity = newActivity;
-//			return true;
-//		}
-//		
-//		return false;
-//		
-//	}
-//	
-//	public boolean stopActivity(){
-//		if(currentActivity = null){
-//			return false;
-//		}
-//		
-//		oldActivityList.add(currentActivity);
-//		currentActivity = null;
-//		return true;	
-//		
-//	}
-//	
-//	public boolean cancelActivity(){
-//		if(currentActivity =null){
-//			return false;
-//		}
-//		
-//		currentActivity = null;
-//		return true;
-//		
-//	}
+	public boolean startActivity(Activity newActivity){
 		
+		if (currentActivity = null){
+			this.currentActivity = newActivity;
+			return true;
+		}
 		
-	
-	
-	
+		return false;
 		
 	}
 	
+	public boolean stopActivity(){
+		if(currentActivity = null){
+			return false;
+		}
+		
+		oldActivityList.add(currentActivity);
+		currentActivity = null;
+		return true;	
+		
+	}
 	
-	
+	public boolean cancelActivity(){
+		if(currentActivity =null){
+			return false;
+		}
+		
+		currentActivity = null;
+		return true;
+		
+	}
 }
