@@ -1,21 +1,26 @@
 package DomainModel;
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.*;
 import javax.persistence.*;
-//
+import com.googlecode.objectify.Key;
+
+@Entity
 public class Student {
 
 	private String studentName;
 	@Id private long studentID;
 	private String password;
+	
+	//Set<Key<Course>> courses2;
 	private List<Course> courses;
 	private List<Milestone> milestoneList;
+	
 	private List<Activity> oldActivityList;
 	private Activity currentActivity;
 	private String emailAdress;
 	private StudyProgram studyProgram;
 	
-	public Student(StudyProgram studyPorgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
+	public Student(StudyProgram studyProgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
 		this.studentName = studentName;
 		this.studyProgram = studyProgram;
 		this.studentID = studentID;
@@ -26,6 +31,21 @@ public class Student {
 		oldActivityList = null;
 		milestoneList = null;
 		courses = null;
+	}
+	
+public StudyProgram getStudyProgram() {
+		return studyProgram;
+	}
+	public List<Course> getCourses() {
+	return courses;
+}
+
+public void setCourses(List<Course> courses) {
+	this.courses = courses;
+}
+
+	public void setStudyProgram(StudyProgram studyProgram) {
+		this.studyProgram = studyProgram;
 	}
 public String getEmailAdress()
 {
