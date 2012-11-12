@@ -87,8 +87,8 @@ public String getEmailAdress()
 
 	public boolean startActivity(Activity newActivity){
 		
-		if (currentActivity == null){
-			this.currentActivity = newActivity;
+		if (getCurrentActivity() == null){
+			setCurrentActivity(newActivity);
 			return true;
 		}
 		
@@ -97,22 +97,30 @@ public String getEmailAdress()
 	}
 	
 	public boolean stopActivity(){
-		if(currentActivity == null){
+		if(getCurrentActivity() == null){
 			return false;
 		}
 		
 		oldActivityList.add(currentActivity);
-		currentActivity = null;
+		setCurrentActivity(null);
 		return true;	
 		
 	}
-	
+
+	public Activity getCurrentActivity() {
+		return currentActivity;
+	}
+
+	public void setCurrentActivity(Activity currentActivity) {
+		this.currentActivity = currentActivity;
+	}
+
 	public boolean cancelActivity(){
-		if(currentActivity == null){
+		if(getCurrentActivity() == null){
 			return false;
 		}
 		
-		currentActivity = null;
+		setCurrentActivity(null);
 		return true;
 		
 	}
