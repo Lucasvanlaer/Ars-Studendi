@@ -3,7 +3,7 @@ package arsstudendi;
 
 import com.googlecode.objectify.*;
 import DomainModel.Student;
-
+//
 public class StudentRegistry {
 
 	private static StudentRegistry _singletonObject;
