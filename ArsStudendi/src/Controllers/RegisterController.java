@@ -1,7 +1,7 @@
 package Controllers;
 
 import java.util.List;
-
+import arsstudendi.*;
 import DomainModel.*;
 import DomainModel.StudyProgram;
 
@@ -16,10 +16,14 @@ public class RegisterController {
 		// een boolean terug geven of het emailadres geldig is
 	    //if( de boolean true is ){
 			Student student = new Student(studyPorgram,studentName,studentID,password,courses,newEmailAdress);
+<<<<<<< HEAD
 	succeed = true;
 	
 	
 	
+=======
+	boolean succeed = StudentRegistry.addStudent(student);
+>>>>>>> branch 'master' of https://github.com/Lucasvanlaer/Ars-Studendi.git
 	return succeed;
 	}
 	
