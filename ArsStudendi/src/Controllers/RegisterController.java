@@ -30,7 +30,7 @@ public class RegisterController {
 	return succeed;
 	}
 	
-	public boolean checkpassword(String password)
+	public boolean checkPassword(String password)
 	{
 		if(password==null){return false;}else{return true;}
 	}
@@ -41,7 +41,13 @@ public class RegisterController {
 	{
 		if(email==null){return false;}else{return true;}
 	}
-	public boolean checkList(List<Course> courseList){
-		if(courseList.size()==0){return false;}else{return true;}
+	public boolean checkList(List<String> courseList){
+		List<Course> courses = null;
+		for(String strCourse: courseList){
+			Long courseID = Long.valueOf(strCourse);
+			Course course = CourseFinder.Find(courseID);
+			courses.add(course);	
+		}
+		if(courses.size()==0){return false;}else{return true;}
 	}
 }
