@@ -14,27 +14,47 @@ public class RegisterController {
 	{
 		boolean succeed = false;
 		// een boolean terug geven of het emailadres geldig is
-	//if( de boolean true is ){
+	    //if( de boolean true is ){
 			Student student = new Student(studyPorgram,studentName,studentID,password,courses,newEmailAdress);
 	succeed = true;
 	
-	}
+	
 	
 	return succeed;
 	}
 	
 	public boolean checkpassword(String password)
 	{
-		if(password==null){return false;}else{return true;}
+		if(password==null)
+		{
+			return false;
+			}
+		else{
+			return true;
+			}
 	}
 	public boolean checkUser(String userName){
-		if(userName==null){return false;}else{return true;}
+		if(userName==null){
+			return false;
+			}
+		else{
+			return true;
+			}
 	}
 	public boolean checkEmail(String email)
 	{
-		if(email==null){return false;}else{return true;}
+		if(email==null){
+			return false;
+			}
+		else{
+			return true;}
 	}
 	public boolean checkList(List<Course> courseList){
-		if(courseList.size()==0){return false;}else{return true;}
+		if(courseList.size()==0){
+			return false;
+			}
+		else{
+			return true;
+			}
 	}
 }
