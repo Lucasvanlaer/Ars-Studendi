@@ -10,13 +10,20 @@ public class RegisterController {
 	public RegisterController (){
 		
 	}
-	public boolean makeStudent(StudyProgram studyPorgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress)
+	public boolean makeStudent(Long program, String studentName, long studentID, String password, List<String> StrCourses, String newEmailAdress)
 	{
 		boolean succeed = false;
 		// een boolean terug geven of het emailadres geldig is
 	//if( de boolean true is ){
-			Student student = new Student(studyPorgram,studentName,studentID,password,courses,newEmailAdress);
-	boolean succeed = StudentRegistry.addStudent(student);
+		StudyProgram studyProgram = StudyProgramFinder.Find(program);
+		List<Course> courses = null;
+		for(String strCourse: StrCourses){
+			Course course = CourseFinder.Find(strCourse);
+			courses.add(course);	
+		}
+		
+	Student student = new Student(studyProgram,studentName,studentID,password,courses,newEmailAdress);
+	succeed = StudentRegistry.addStudent(student);
 	return succeed;
 	}
 	
