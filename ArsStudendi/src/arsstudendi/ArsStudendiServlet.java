@@ -24,8 +24,28 @@ public class ArsStudendiServlet extends HttpServlet {
 		String emailAdress = req.getParameter("emailAdress");
 		
 		RegisterController controller = new RegisterController();
+		String s = null;
+		if(!controller.checkPassword(password)){
+			s = "Please enter a password";
+		}
+		if(!controller.checkUser(studentName)){
+			s = s + "Please enter your name";
+		}
+		if(!controller.checkEmail(emailAdress)){
+			s = s + "Please enter an email";
+		}
+		if(!controller.checkList(courses)){
+			s = s + "Please enter a password";
+		}
+		boolean succeeded = controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
+		if (succeeded){
+			resp.sendRedirect("succesfully registered");
+		}
+		else{
+			resp.sendRedirect(s);
+		}
 		
-		controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
-
+			
+		}
+		
 	}
-}
