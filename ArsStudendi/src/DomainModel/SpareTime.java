@@ -15,4 +15,5 @@ public SpareTimeType getType()
 {
 	return type;
 }
+
 }
