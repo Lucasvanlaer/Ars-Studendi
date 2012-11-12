@@ -11,14 +11,18 @@ public class StudentRegistry {
 	private StudentRegistry(){
 	ObjectifyService.register(Student.class);
 	}
-	
-	public static synchronized StudentRegistry getSingletobnObject(){
+
+	/**
+	 * Dit is eigenlijk de getInstance() methode
+	 * @return
+	 */
+	public static synchronized StudentRegistry getSingletonObject(){
 		if( _singletonObject == null){
 			_singletonObject = new StudentRegistry();
 		}
 		return _singletonObject;
 	}
 	
-	
+
 	
 }

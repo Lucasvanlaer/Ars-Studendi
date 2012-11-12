@@ -4,23 +4,29 @@ import java.util.List;
 
 import DomainModel.*;
 import DomainModel.StudyProgram;
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Objectify;
 
 public class RegisterController {
 
 	public RegisterController (){
 		
 	}
-	public boolean makeStudent(StudyProgram studyPorgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress)
+	
+	public boolean makeStudent(StudyProgram studyProgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress)
 	{
 		boolean succeed = false;
+		
+	StudentFinder.
 		// een boolean terug geven of het emailadres geldig is
 	//if( de boolean true is ){
-			Student student = new Student(studyPorgram,studentName,studentID,password,courses,newEmailAdress);
+			Student student = new Student(studyProgram,studentName,studentID,password,courses,newEmailAdress);
 	succeed = true;
 	
-	}
+	
 	
 	return succeed;
+	
 	}
 	
 	public boolean checkpassword(String password)
