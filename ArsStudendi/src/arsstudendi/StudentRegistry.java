@@ -2,9 +2,11 @@ package arsstudendi;
 
 
 import com.googlecode.objectify.*;
+
+import Controllers.Objectifiable;
 import DomainModel.Student;
 
-public class StudentRegistry {
+public class StudentRegistry extends Objectifiable{
 
 	private static StudentRegistry _singletonObject;
 	
@@ -22,7 +24,14 @@ public class StudentRegistry {
 		}
 		return _singletonObject;
 	}
-	
-
+	public boolean putStudent(Student student){
+		if(student != null){
+		getObjectify().put(student);
+		return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 }

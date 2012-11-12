@@ -19,7 +19,7 @@ public class RegisterController {
 
 	boolean succeed = false;
 
-			Student student = new Student(studyProgram,studentName,studentID,password,courses,newEmailAdress);
+	Student student = new Student(studyProgram,studentName, password,courses,newEmailAdress);
 	boolean succeed = StudentRegistry.makeStudent(student);
 	succeed = true;
 	

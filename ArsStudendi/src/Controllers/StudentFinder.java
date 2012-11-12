@@ -3,16 +3,10 @@ package Controllers;
 import com.googlecode.objectify.*;
 import DomainModel.*;
 
-public class StudentFinder {
+public class StudentFinder extends Objectifiable {
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public Objectify getObjectify(){
-		Objectify ofy = ObjectifyService.begin();
-		return ofy;
-	}
+	
+
 	
 	/**
 	* Vraagt het Studentobject uit de Google Datastore op die 
@@ -21,7 +15,7 @@ public class StudentFinder {
  	* @return getObjectify().query(Student.class).filter("emailAdress", inLogEmailAdress).filter("password", password).get()
  	* 			null als het object niet wordt gevonden?
  	*/
-	public Student getStudent(String inLogEmailAdress, String password){
+	public  Student getStudent(String inLogEmailAdress, String password){
 		return getObjectify().query(Student.class).filter("emailAdress", inLogEmailAdress).filter("password", password).get() ;//load().type(Student.class)
 		}
 	

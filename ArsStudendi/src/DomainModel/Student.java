@@ -20,10 +20,9 @@ public class Student {
 	private String emailAdress;
 	private StudyProgram studyProgram;
 	
-	public Student(StudyProgram studyProgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress) {
+	public Student(StudyProgram studyProgram, String studentName,  String password, List<Course> courses, String newEmailAdress) {
 		this.studentName = studentName;
 		this.studyProgram = studyProgram;
-		this.studentID = studentID;
 		this.password = password;
 		this.courses = courses;
 		this.emailAdress = newEmailAdress;
