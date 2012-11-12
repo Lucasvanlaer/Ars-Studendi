@@ -19,12 +19,13 @@ public class RegisterController {
 		List<Course> courses = null;
 		for(String strCourse: StrCourses){
 			Long courseID = Long.valueOf(strCourse);
-			Course course = CourseFinder.Find(strCourse);
+			Course course = CourseFinder.Find(courseID);
 			courses.add(course);	
 		}
 		
-	Student student = new Student(studyProgram,studentName,studentID,password,courses,newEmailAdress);
-	succeed = StudentRegistry.addStudent(student);
+	Student student = new Student(studyProgram, studentName, password, courses, newEmailAdress);
+	
+	succeed = StudentRegistry.getSingletonObject().putStudent(student);
 
 	return succeed;
 	}
