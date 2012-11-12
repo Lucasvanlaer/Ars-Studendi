@@ -16,7 +16,7 @@ public class RegisterController {
 		// een boolean terug geven of het emailadres geldig is
 	//if( de boolean true is ){
 			Student student = new Student(studyPorgram,studentName,studentID,password,courses,newEmailAdress);
-	boolean succeed = StudentRegistry.makeStudent(student);
+	boolean succeed = StudentRegistry.addStudent(student);
 	return succeed;
 	}
 	
