@@ -18,6 +18,7 @@ public class RegisterController {
 		StudyProgram studyProgram = StudyProgramFinder.Find(program);
 		List<Course> courses = null;
 		for(String strCourse: StrCourses){
+			Long courseID = Long.valueOf(strCourse);
 			Course course = CourseFinder.Find(strCourse);
 			courses.add(course);	
 		}
