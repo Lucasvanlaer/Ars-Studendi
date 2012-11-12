@@ -1,7 +1,7 @@
 package Controllers;
 
 import java.util.List;
-
+import arsstudendi.*;
 import DomainModel.*;
 import DomainModel.StudyProgram;
 import com.googlecode.objectify.ObjectifyService;
@@ -15,16 +15,12 @@ public class RegisterController {
 	
 	public boolean makeStudent(StudyProgram studyProgram, String studentName, long studentID, String password, List<Course> courses, String newEmailAdress)
 	{
-		boolean succeed = false;
-		
-	StudentFinder.
-		// een boolean terug geven of het emailadres geldig is
-	//if( de boolean true is ){
+
+	boolean succeed = false;
+
 			Student student = new Student(studyProgram,studentName,studentID,password,courses,newEmailAdress);
-	succeed = true;
-	
-	
-	
+	boolean succeed = StudentRegistry.makeStudent(student);
+
 	return succeed;
 	
 	}
