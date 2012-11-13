@@ -89,12 +89,12 @@ public String getEmailAdress()
 	public void setPassword(String newPassword){
 		this.password = newPassword;
 	}
-	
+	&
 	public String getPassword(){
 		return password;
 	}
 	
-	public long getUserID(){
+	public long getStudentID(){
 		return studentID;
 	}
 	
@@ -161,10 +161,10 @@ public String getEmailAdress()
 		this.oldActivityList = oldActivityList;
 	}
 	
-	public void addActivity(Activity activity){
+	public void addActivityToOldActivityList(Activity activity){
 		getOldActivityList().add(activity);
 	}
-	public void removeActivity(Activity activity){
+	public void removeFromOldActivityList(Activity activity){
 		if(getOldActivityList().contains(activity)){
 			getOldActivityList().remove(activity);
 		}

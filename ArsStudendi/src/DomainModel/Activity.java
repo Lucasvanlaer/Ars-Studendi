@@ -1,16 +1,16 @@
 package DomainModel;
 import java.util.*;
 
-public abstract class Activity {
+public class Activity {
 	private Calendar startTime;
 	private Calendar stopTime;
 	private long studentID;
-	private String name;
+	private String activityName;
 	
-	public Activity(Calendar startTime, long UserID, String name){
+	public Activity(Calendar startTime, long studentID, String activityName){
 		setStartTime(startTime);
-		setStopTime(stopTime);
-		setName(name);
+		setStudentID(studentID);
+		setName(activityName);
 		
 	}
 
@@ -48,11 +48,11 @@ public abstract class Activity {
 	
 	
 	public String getName(){
-		return name;
+		return activityName;
 	}
 	
 	public void setName(String newName){
-		name = newName;
+		activityName = newName;
 	}		
 }
 

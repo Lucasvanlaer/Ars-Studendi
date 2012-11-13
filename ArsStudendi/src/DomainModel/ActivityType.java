@@ -1,5 +1,17 @@
 package DomainModel;
 
 public enum ActivityType {
-	SLEEP, SPORT, HOBBY, SOCIAL, OTHER;
+	STUDY{
+		public StudyType type;
+	
+		public setStudyType(StudyType newType){
+			this.type = newType;
+		}
+		
+		public StudyType getStudyType(){
+			return type;
+		}
+	},SLEEP, SPORT, HOBBY, SOCIAL, OTHER;
+	
+	//HOORCOLLEGE{}, OEFENZITTING, TEAMWORK,
 }
