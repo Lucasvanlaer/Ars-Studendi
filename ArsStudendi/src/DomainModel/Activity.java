@@ -1,21 +1,33 @@
 package DomainModel;
-import java.io.IOException;
 import java.util.*;
 
 public abstract class Activity {
 	private Calendar startTime;
 	private Calendar stopTime;
-	private long UserID;
+	private long studentID;
 	private String name;
 	
 	public Activity(Calendar startTime, long UserID, String name){
-		this.startTime = startTime;
-		stopTime = null;
-		this.name = name;
+		setStartTime(startTime);
+		setStopTime(stopTime);
+		setName(name);
+		
 	}
 
-	public long getUserID(){
-		return UserID;
+	public void setStartTime(Calendar startTime) {
+		this.startTime = startTime;
+	}
+
+	public void setStopTime(Calendar stopTime) {
+		this.stopTime = stopTime;
+	}
+
+	public void setStudentID(long studentID) {
+		this.studentID = studentID;
+	}
+
+	public long getStudentID(){
+		return studentID;
 	}
 	
 	public Calendar getStartTime(){
