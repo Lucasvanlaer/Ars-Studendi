@@ -1,7 +1,6 @@
 package arsstudendi;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import DomainModel.Course;
 import DomainModel.StudyProgram;
 
@@ -49,7 +48,7 @@ public class StudyProgramRegistry extends Objectifiable {
 			courseList.add(courses.get(4)); 
 			courseList.add(courses.get(5)); 
 		}
-		StudyProgram studyProgram = new StudyProgram(courseList, arr[i]);
+		StudyProgram studyProgram = new StudyProgram(courseList, arr[i], (long) i);
 		studyPrograms.add(studyProgram);
 		i++;
 	}
@@ -89,5 +88,23 @@ public class StudyProgramRegistry extends Objectifiable {
 //	public StudyProgram getStudyProgram(Long studyProgramID){
 //		return getObjectify().get(StudyProgram.class, studyProgramID);
 //	}
-		
+	public ArrayList<StudyProgram> getStudyProgramList(){
+		return studyPrograms;
+	}
+	
+	public StudyProgram getCourse(Long studyProgramID){
+		for (StudyProgram studyProgram: studyPrograms){
+			if (studyProgram.getStudyProgramID() == studyProgramID){
+				return studyProgram;
+			}
+	
+		}
+		return null;
+		// should NEVER happen
+		// THIS CANNOT HAPPEN DO YOU HEAR ME
+	}
+	
+	public String[] getStudyPorgamNames(){
+		return arr;
+	}
 }
