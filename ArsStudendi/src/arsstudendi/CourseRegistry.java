@@ -9,8 +9,9 @@ public class CourseRegistry extends Objectifiable{
 
 	private static CourseRegistry _singletonObject;
 	public static ArrayList<Course> courses;
+	public static String[] arr = { "TESTCOURSE1", "TESTCOURSE2", "TESTCOURSE3", "TESTCOURSE4", "TESTCOURSE5", "TESTCOURSE6"};
 	static{
-		String[] arr = { "TESTCOURSE1", "TESTCOURSE2", "TESTCOURSE3", "TESTCOURSE4", "TESTCOURSE5", "TESTCOURSE6"};
+		
 
 	int length = 6 ;
 	int i =1;
@@ -65,6 +66,10 @@ public class CourseRegistry extends Objectifiable{
 		return null;
 		// should NEVER happen
 		// THIS CANNOT HAPPEN DO YOU HEAR ME
+	}
+	
+	public String[] getCourseNames(){
+		return arr;
 	}
 	
 }
