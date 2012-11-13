@@ -1,6 +1,7 @@
 package DomainModel;
 //import java.io.IOException;
 import java.util.*;
+
 import javax.persistence.*;
 import com.googlecode.objectify.Key;
 
@@ -60,15 +61,31 @@ public StudyProgram getStudyProgram() {
 public void setCourses(List<Course> courses) {
 	this.courses = courses;
 }
+public void addCourse(Course course){
+	if( course != null){
+	getCourses().add(course);
+	}
+}
+public void removeCourse(Course course){
+	if(course != null && getCourses().contains(course)){
+		getCourses().remove(course);
+	}
+}
 
-	public void setStudyProgram(StudyProgram studyProgram) {
+public void setStudyProgram(StudyProgram studyProgram) {
+	if(studyProgram != null){
 		this.studyProgram = studyProgram;
 	}
+}
 public String getEmailAdress()
 {
 	return emailAdress;
 }
 	
+	public void setEmailAdress(String emailAdress) {
+	this.emailAdress = emailAdress;
+}
+
 	public void setPassword(String newPassword){
 		this.password = newPassword;
 	}
@@ -135,4 +152,23 @@ public String getEmailAdress()
 		return true;
 		
 	}
+
+	public List<Activity> getOldActivityList() {
+		return oldActivityList;
+	}
+
+	public void setOldActivityList(List<Activity> oldActivityList) {
+		this.oldActivityList = oldActivityList;
+	}
+	
+	public void addActivity(Activity activity){
+		getOldActivityList().add(activity);
+	}
+	public void removeActivity(Activity activity){
+		if(getOldActivityList().contains(activity)){
+			getOldActivityList().remove(activity);
+		}
+	}
+	
+	
 }
