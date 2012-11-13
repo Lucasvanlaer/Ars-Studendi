@@ -3,11 +3,14 @@ package arsstudendi;
 import Controllers.Objectifiable;
 import DomainModel.Course;
 
+import com.googlecode.objectify.Key;
 import com.googlecode.objectify.ObjectifyService;
 
 public class CourseRegistry extends Objectifiable{
 
 	private static CourseRegistry _singletonObject;
+	
+	
 	
 	private CourseRegistry(){
 	ObjectifyService.register(Course.class);
@@ -32,5 +35,16 @@ public class CourseRegistry extends Objectifiable{
 			return false;
 		}
 	}
+	/**
+	 * 
+	 */
+	public Course getCourse(Key<Course> courseKey){
+		return getObjectify().get(courseKey);
+	}
+	
+	public Course getCourse(Long courseID){
+		return getObjectify().get(Course.class, courseID);
+	}
+	
 }
 	
