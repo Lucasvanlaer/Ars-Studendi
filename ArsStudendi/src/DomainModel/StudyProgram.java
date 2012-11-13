@@ -4,11 +4,14 @@ import java.util.*;
 public class StudyProgram {
 private List<Course> courseList;
 private String name;
+private Long studyProgramID;
 
-public StudyProgram(List<Course> courseList, String name)
+
+public StudyProgram(List<Course> courseList, String name, Long studyProgramID)
 {
 	this.courseList = courseList;
 	this.name=name;
+	this.studyProgramID = studyProgramID;
 }
 public void addCourse(Course newCourse){
 	if (courseList.contains(newCourse)==false){
@@ -29,6 +32,8 @@ public void removeCourse(Course oldCourse){
 		}
 }
 }
-
+public Long getStudyProgramID(){
+	return studyProgramID;
+}
 
 }
