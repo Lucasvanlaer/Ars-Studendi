@@ -6,12 +6,16 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
+	<script> var emptyFields = request.getParameter("emptyFields"); </script>
+	
+	
 </head> 
 <body> 
 
 <div data-role="page">
 
-	<div data-role="header">
+	<div data-role="header" data-theme="b">
 		<h1>Register</h1>
 	</div><!-- /header -->
 
@@ -48,14 +52,14 @@
 		
 		</div>
 		
-		<%
-		
-		%>
+		<input type="submit" value="Submit Button"  />	 
 		
 		
-		<input type="submit" value="Submit Button" />	 
-	
 	</form>
+	
+	
+	
+	
 </div><!-- /page -->
 
 </body>
