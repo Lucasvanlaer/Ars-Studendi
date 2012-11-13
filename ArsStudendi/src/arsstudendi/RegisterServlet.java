@@ -15,9 +15,10 @@ public class RegisterServlet extends HttpServlet {
 		String strStudyProgram = req.getParameter("studyProgram");
 		Long studyProgram = Long.valueOf(strStudyProgram);	
 				//Opletten met mogelijke exceptions
-		String studentName = req.getParameter("studentName");
-		String StrStudentID = req.getParameter ("studentID");
-		Long studentID = Long.valueOf(StrStudentID);
+		String studentFirstName = req.getParameter("studentFirstName");
+		String studentLastName = req.getParameter("studentLastName");
+		//String StrStudentID = req.getParameter ("studentID");
+		//Long studentID = Long.valueOf(StrStudentID);
 		String password = req.getParameter("password");
 		String[] strCourses = req.getParameterValues("courses");
 		List<String> courses = Arrays.asList(strCourses);  
@@ -29,8 +30,11 @@ public class RegisterServlet extends HttpServlet {
 		if(!controller.checkPassword(password)){
 			s = "Password is empty";
 			}
-		if(!controller.checkUser(studentName)){
-			s += "Username is empty";
+		if(!controller.checkUser(studentFirstName)){
+			s += "User's first name is empty";
+			}
+		if(!controller.checkUser(studentLastName)){
+			s += "User's last name is empty";
 			}
 		if(!controller.checkEmail(emailAdress)){
 			s += "E-mail is empty";
@@ -42,8 +46,8 @@ public class RegisterServlet extends HttpServlet {
 		
 		resp.sendRedirect("/guestbook.jsp?emptyFields=" + s);
 		
-		controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
-		
+		//controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
+		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
 			
 		
 		

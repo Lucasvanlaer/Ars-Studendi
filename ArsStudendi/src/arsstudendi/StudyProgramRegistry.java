@@ -107,4 +107,7 @@ public class StudyProgramRegistry extends Objectifiable {
 	public String[] getStudyProgamNames(){
 		return arr;
 	}
+	public StudyProgram getStudyProgram(long studyprogramNumber){
+		return getStudyProgramList().get((int) studyprogramNumber);
+	}
 }

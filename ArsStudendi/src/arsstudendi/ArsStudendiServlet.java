@@ -15,9 +15,10 @@ public class ArsStudendiServlet extends HttpServlet {
 		String strStudyProgram = req.getParameter("studyProgram");
 		Long studyProgram = Long.valueOf(strStudyProgram);	
 				//Opletten met mogelijke exceptions
-		String studentName = req.getParameter("studentName");
+		String studentFirstName = req.getParameter("studentFirstName");
+		String studentLastName = req.getParameter("studentLastName");		
 		String StrStudentID = req.getParameter ("studentID");
-		Long studentID = Long.valueOf(StrStudentID);
+		//Long studentID = Long.valueOf(StrStudentID);
 		String password = req.getParameter("password");
 		String[] strCourses = req.getParameterValues("courses");
 		List<String> courses = Arrays.asList(strCourses);  
@@ -28,7 +29,10 @@ public class ArsStudendiServlet extends HttpServlet {
 		if(!controller.checkPassword(password)){
 			s = "Please enter a password";
 		}
-		if(!controller.checkUser(studentName)){
+		if(!controller.checkUser(studentFirstName)){
+			s = s + "Please enter your name";
+		}
+		if(!controller.checkUser(studentLastName)){
 			s = s + "Please enter your name";
 		}
 		if(!controller.checkEmail(emailAdress)){
@@ -37,7 +41,8 @@ public class ArsStudendiServlet extends HttpServlet {
 		if(!controller.checkList(courses)){
 			s = s + "Please enter a password";
 		}
-		boolean succeeded = controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
+		//boolean succeeded = controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
+		boolean succeeded = controller.makeStudent(studyProgram, studentFirstName, studentLastName,password, courses, emailAdress);
 		if (succeeded){
 			resp.sendRedirect("succesfully registered");
 		}

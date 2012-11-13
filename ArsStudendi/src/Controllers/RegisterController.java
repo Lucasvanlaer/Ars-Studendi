@@ -37,7 +37,11 @@ public class RegisterController {
 		if(password==null){return false;}else{return true;}
 	}
 	public boolean checkUser(String userName){
-		if(userName==null){return false;}else{return true;}
+		if(userName==null){
+			return false;
+			}else{
+				return true;
+				}
 	}
 	public boolean checkEmail(String email)
 	{
