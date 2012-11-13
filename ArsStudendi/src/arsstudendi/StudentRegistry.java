@@ -5,6 +5,7 @@ import com.googlecode.objectify.*;
 
 import Controllers.Objectifiable;
 import DomainModel.Student;
+import Controllers.*;
 
 public class StudentRegistry extends Objectifiable{
 

@@ -104,7 +104,7 @@ public class StudyProgramRegistry extends Objectifiable {
 		// THIS CANNOT HAPPEN DO YOU HEAR ME
 	}
 	
-	public String[] getStudyPorgamNames(){
+	public String[] getStudyProgamNames(){
 		return arr;
 	}
 }

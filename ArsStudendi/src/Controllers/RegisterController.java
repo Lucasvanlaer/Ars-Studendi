@@ -10,7 +10,7 @@ public class RegisterController {
 	public RegisterController (){
 		
 	}
-	public boolean makeStudent(Long program, String studentName, long studentID, String password, List<String> StrCourses, String newEmailAdress)
+	public boolean makeStudent(Long program, String studentFirstName, String studentLastName, String password, List<String> StrCourses, String newEmailAdress)
 	{
 		boolean succeed = false;
 		Long studyP = Long.valueOf(program);
@@ -25,7 +25,7 @@ public class RegisterController {
 			courses.add(course);	
 		}
 		
-	Student student = new Student(studyProgram, studentName, password, courses, newEmailAdress);
+	Student student = new Student(studyProgram, studentFirstName, studentLastName, password, courses, newEmailAdress);
 	
 	succeed = StudentRegistry.getSingletonObject().putStudent(student);
 
