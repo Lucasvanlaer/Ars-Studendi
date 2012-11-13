@@ -8,8 +8,7 @@ public class LogController {
 public LogController(){
 	
 }
-public boolean
-}
+
 
 }
 
