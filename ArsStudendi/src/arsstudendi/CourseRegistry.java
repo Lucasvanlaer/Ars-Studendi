@@ -16,7 +16,7 @@ public class CourseRegistry extends Objectifiable{
 	int length = 6 ;
 	int i =1;
 	while (i<length+1){
-		Course course = new Course(arr[1], (long) i);
+		Course course = new Course(arr[i], (long) i);
 		courses.add(course);
 		i++;
 	}

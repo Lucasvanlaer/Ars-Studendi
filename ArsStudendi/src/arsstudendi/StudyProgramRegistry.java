@@ -1,5 +1,8 @@
 package arsstudendi;
 
+import java.util.ArrayList;
+import java.util.List;
+import DomainModel.Course;
 import DomainModel.StudyProgram;
 
 import com.googlecode.objectify.Key;
@@ -8,6 +11,49 @@ import Controllers.Objectifiable;
 
 public class StudyProgramRegistry extends Objectifiable {
 	private static StudyProgramRegistry _singletonObject;
+	public static ArrayList<StudyProgram> studyPrograms;
+	public static String[] arr = { "TESTPROGRAM1", "TESTPROGRAM2", "TESTPROGRAM3", "TESTPROGRAM4", "TESTPROGRAM5", "TESTPROGRAM6"};
+	static{
+	ArrayList<Course> courses = CourseRegistry.getSingletonObject().getCourseList();
+	int length = 6 ;
+	int i =1;
+	while (i<length+1){
+		ArrayList<Course> courseList = new ArrayList<Course>();
+		if(i == 1){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(5)); 
+		}
+		if(i == 2){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(2)); 
+			courseList.add(courses.get(3)); 
+		}
+		if(i == 3){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(6)); 
+		}
+		if(i == 4){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(5)); 
+			courseList.add(courses.get(6)); 
+		}
+		if(i == 5){
+			courseList.add(courses.get(2)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(4)); 
+		}
+		if(i == 6){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(4)); 
+			courseList.add(courses.get(5)); 
+		}
+		StudyProgram studyProgram = new StudyProgram(courseList, arr[i]);
+		studyPrograms.add(studyProgram);
+		i++;
+	}
+	}
 	
 	private StudyProgramRegistry(){
 	ObjectifyService.register(StudyProgram.class);
@@ -23,25 +69,25 @@ public class StudyProgramRegistry extends Objectifiable {
 		}
 		return _singletonObject;
 	}
-	public boolean putStudent(StudyProgram studyProgram){
-		if(studyProgram != null){
-		getObjectify().put(studyProgram);
-		return true;
-		}
-		else{
-			return false;
-		}
-	}
-	
-	/**
-	 * 
-	 */
-	public StudyProgram getCourse(Key<StudyProgram> studyProgramKey){
-		return getObjectify().get(studyProgramKey);
-	}
-		
-	public StudyProgram getStudyProgram(Long studyProgramID){
-		return getObjectify().get(StudyProgram.class, studyProgramID);
-	}
+//	public boolean putStudent(StudyProgram studyProgram){
+//		if(studyProgram != null){
+//		getObjectify().put(studyProgram);
+//		return true;
+//		}
+//		else{
+//			return false;
+//		}
+//	}
+//	
+//	/**
+//	 * 
+//	 */
+//	public StudyProgram getCourse(Key<StudyProgram> studyProgramKey){
+//		return getObjectify().get(studyProgramKey);
+//	}
+//		
+//	public StudyProgram getStudyProgram(Long studyProgramID){
+//		return getObjectify().get(StudyProgram.class, studyProgramID);
+//	}
 		
 }
