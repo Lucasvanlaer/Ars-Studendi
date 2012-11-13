@@ -12,18 +12,11 @@
 <div data-role="page">
 
 	<div data-role="header" data-theme="b">
-		<h1>Ars Studendi</h1>
-		 <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext">Home</a> 
+		<a href="index.html" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+		<h1>Register</h1>
+		<a href="Register.jsp" data-role="button" data-icon="check">Sign Up</a> 
 	</div><!-- /header -->
-	<div data-role="content">	
-	</div><!-- /content -->
 	
-<a href="home.jsp" data-role="button">Home</a> <br>
-<a href="Tracking.html" data-role="button">Tracking</a> <br>
-<a href="Milestones.html" data-role="button">Mijlpalen</a> <br>
-<a href="Statistics.html" data-role="button">Statistieken</a> <br>
-<a href="index.html" data-role="button">Instellingen</a>
-</div><!-- /page -->
 
 </body>
 </html>

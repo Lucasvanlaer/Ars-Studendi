@@ -21,8 +21,23 @@
 
 	<form action="/register" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<label for="username">Username:</label>
-			<input type="text" name="username" id="username" value="" placeholder="Username"/>
+			<input type="text" name="studentName" id="studentName" value="" placeholder="Username"/>
+		</div>
+		
+		<div data-role="fieldcontain">
+    		<input type="password" name="password" id="password" value="" placeholder="Password"/>
+		</div>
+		
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail"/>
+		</div>
+		
+		<div data-role="controlgroup">
+		
+		<label><input type="checkbox" name="courses" /> Numerieke Wiskunde </label>
+			
+			<input type="courses" name="courses" id="courses"  />
+		
 		</div>
 		
 		
