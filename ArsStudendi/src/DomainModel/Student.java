@@ -7,7 +7,8 @@ import com.googlecode.objectify.Key;
 @Entity
 public class Student {
 
-	private String studentName;
+	private String studentFirstName;
+	private String studentLastName;
 	@Id private long studentID;
 	private String password;
 	
@@ -20,8 +21,9 @@ public class Student {
 	private String emailAdress;
 	private StudyProgram studyProgram;
 	
-	public Student(StudyProgram studyProgram, String studentName,  String password, List<Course> courses, String newEmailAdress) {
-		this.studentName = studentName;
+	public Student(StudyProgram studyProgram, String studentFirstName, String studentLastName,  String password, List<Course> courses, String newEmailAdress) {
+		this.studentFirstName = studentFirstName;
+		this.studentLastName = studentLastName;
 		this.studyProgram = studyProgram;
 		this.password = password;
 		this.courses = courses;
@@ -32,6 +34,22 @@ public class Student {
 		courses = null;
 	}
 	
+public String getStudentFirstName() {
+		return studentFirstName;
+	}
+
+public void setStudentFirstName(String studentFirstName) {
+	this.studentFirstName = studentFirstName;
+}
+
+public String getStudentLastName() {
+		return studentLastName;
+	}
+
+public void setStudentLastName(String studentLastName) {
+		this.studentLastName = studentLastName;
+	}
+
 public StudyProgram getStudyProgram() {
 		return studyProgram;
 	}
@@ -50,13 +68,6 @@ public String getEmailAdress()
 {
 	return emailAdress;
 }
-	public String getUserName(){
-		return studentName;
-	}
-	
-	public void setUsername(String newName){
-		this.studentName = newName;
-	}
 	
 	public void setPassword(String newPassword){
 		this.password = newPassword;
