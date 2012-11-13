@@ -19,7 +19,7 @@
 		<p>Sign up for an ArsStudendi account and enjoy the benefits of learning analytics!</p>		
 	</div><!-- /content -->
 
-	<form action="/register" method="post">
+	<form action="/index.html" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
 			<input type="text" name="studentName" id="studentName" value="" placeholder="Username"/>
 		</div>
@@ -32,14 +32,25 @@
 			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail"/>
 		</div>
 		
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<input type="text" name="studentID" id="studentID" value="" placeholder="r-nummer"/>
+		</div>
+		
+		<label for="select-choice-0" class="select">Study Program</label>
+			<select name="studyProgram" id="studyProgram">
+   			<option value="2 semester ingenieurswetenschappen: algemene richtlijnen">2 semester ingenieurswetenschappen: algemene richtlijnen</option>
+   			<option value="3e semester ingenieurswetenschappen: algemene richtlijnen">3e semester ingenieurswetenschappen: algemene richting</option>
+		</select>
+		
 		<div data-role="controlgroup">
 		
 		<label><input type="checkbox" name="courses" /> Numerieke Wiskunde </label>
-			
-			<input type="courses" name="courses" id="courses"  />
 		
 		</div>
 		
+		<%
+		
+		%>
 		
 		
 		<input type="submit" value="Submit Button" />	 
