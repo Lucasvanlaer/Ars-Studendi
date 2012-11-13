@@ -1,19 +1,24 @@
 package arsstudendi;
 
 import Controllers.Objectifiable;
-import DomainModel.Course;
-
-import com.googlecode.objectify.Key;
+import DomainModel.*;
+import java.util.*;
 import com.googlecode.objectify.ObjectifyService;
 
 public class CourseRegistry extends Objectifiable{
 
 	private static CourseRegistry _singletonObject;
-	
-	
-	
-	private CourseRegistry(){
-	ObjectifyService.register(Course.class);
+	public static ArrayList<Course> courses;
+	static{
+		String[] arr = { "TESTCOURSE1", "TESTCOURSE2", "TESTCOURSE3", "TESTCOURSE4", "TESTCOURSE5", "TESTCOURSE6"};
+
+	int length = 6 ;
+	int i =1;
+	while (i<length+1){
+		Course course = new Course(arr[1], (long) i);
+		courses.add(course);
+		i++;
+	}
 	}
 
 	/**
