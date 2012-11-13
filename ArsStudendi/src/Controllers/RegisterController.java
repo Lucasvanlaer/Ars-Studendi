@@ -52,4 +52,8 @@ public class RegisterController {
 		}
 		if(courses.size()==0){return false;}else{return true;}
 	}
+	
+	public String[] getCourseNames(){
+		return CourseRegistry.getSingletonObject().getCourseNames();
+	}
 }
