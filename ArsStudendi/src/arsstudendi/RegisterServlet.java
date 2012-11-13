@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 
 
 @SuppressWarnings("serial")
-public class ArsStudendiServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		String strStudyProgram = req.getParameter("studyProgram");
@@ -25,27 +25,27 @@ public class ArsStudendiServlet extends HttpServlet {
 		
 		RegisterController controller = new RegisterController();
 		String s = null;
+				
 		if(!controller.checkPassword(password)){
-			s = "Please enter a password";
-		}
+			s = "Password is empty";
+			}
 		if(!controller.checkUser(studentName)){
-			s = s + "Please enter your name";
-		}
+			s += "Username is empty";
+			}
 		if(!controller.checkEmail(emailAdress)){
-			s = s + "Please enter an email";
-		}
+			s += "E-mail is empty";
+			}
 		if(!controller.checkList(courses)){
-			s = s + "Please enter a password";
-		}
-		boolean succeeded = controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
-		if (succeeded){
-			resp.sendRedirect("succesfully registered");
-		}
-		else{
-			resp.sendRedirect(s);
-		}
+			s += "Courses are empty";
+			}
+		
+		
+		resp.sendRedirect("/guestbook.jsp?emptyFields=" + s);
+		
+		controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
 		
 			
-		}
+		
 		
 	}
+}
