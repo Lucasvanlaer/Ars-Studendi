@@ -3,7 +3,7 @@ package arsstudendi;
 import Controllers.Objectifiable;
 import DomainModel.*;
 import java.util.*;
-import com.googlecode.objectify.ObjectifyService;
+//import com.googlecode.objectify.ObjectifyService;
 
 public class CourseRegistry extends Objectifiable{
 
@@ -31,24 +31,40 @@ public class CourseRegistry extends Objectifiable{
 		}
 		return _singletonObject;
 	}
-	public boolean putCourse(Course course){
-		if(course != null){
-		getObjectify().put(course);
-		return true;
-		}
-		else{
-			return false;
-		}
-	}
+//	public boolean putCourse(Course course){
+//		if(course != null){
+//		getObjectify().put(course);
+//		return true;
+//		}
+//		else{
+//			return false;
+//		}
+//	}
 	/**
 	 * 
 	 */
-	public Course getCourse(Key<Course> courseKey){
-		return getObjectify().get(courseKey);
+//	public Course getCourse(Key<Course> courseKey){
+//		return getObjectify().get(courseKey);
+//	}
+//	
+//	public Course getCourse(Long courseID){
+//		return getObjectify().get(Course.class, courseID);
+//	}
+//	
+	public ArrayList<Course> getCourseList(){
+		return courses;
 	}
 	
 	public Course getCourse(Long courseID){
-		return getObjectify().get(Course.class, courseID);
+		for (Course course: courses){
+			if (course.getCourseID() == courseID){
+				return course;
+			}
+	
+		}
+		return null;
+		// should NEVER happen
+		// THIS CANNOT HAPPEN DO YOU HEAR ME
 	}
 	
 }

@@ -15,15 +15,13 @@ public class RegisterController {
 		boolean succeed = false;
 		Long studyP = Long.valueOf(program);
 		// een boolean terug geven of het emailadres geldig is
-		StudyProgramFinder studyProgramFinder = new StudyProgramFinder();
 		//Tijdelijk wegens niet static
-		StudyProgram studyProgram = studyProgramFinder.getStudyProgram(studyP);
+		StudyProgram studyProgram = StudyProgramRegistry.getSingletonObject().getStudyProgram(studyP);
 		List<Course> courses = new ArrayList<Course>();
-		CourseFinder courseFinder = new CourseFinder();
 		//Tijdelijk wegens niet static
 		for(String strCourse: StrCourses){
 			Long courseID = Long.valueOf(strCourse);
-			Course course = courseFinder.getCourse(courseID);
+			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
 			courses.add(course);	
 		}
 		
@@ -47,11 +45,9 @@ public class RegisterController {
 	}
 	public boolean checkList(List<String> courseList){
 		List<Course> courses = new ArrayList<Course>();
-		CourseFinder courseFinder = new CourseFinder();
-		//Tijdelijk wegens niet static
 		for(String strCourse: courseList){
 			Long courseID = Long.valueOf(strCourse);
-			Course course = courseFinder.getCourse(courseID);
+			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
 			courses.add(course);	
 		}
 		if(courses.size()==0){return false;}else{return true;}
