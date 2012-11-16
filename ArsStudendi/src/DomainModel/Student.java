@@ -1,4 +1,5 @@
 package DomainModel;
+
 //import java.io.IOException;
 import java.util.*;
 
@@ -10,19 +11,20 @@ public class Student {
 
 	private String studentFirstName;
 	private String studentLastName;
-	@Id private long studentID;
+	@Id
+	private Long studentID;
 	private String password;
-	
-	//Set<Key<Course>> courses2;
 	private List<Course> courses;
 	private List<Milestone> milestoneList;
-	
 	private List<Activity> oldActivityList;
 	private Activity currentActivity;
 	private String emailAdress;
 	private StudyProgram studyProgram;
-	
-	public Student(StudyProgram studyProgram, String studentFirstName, String studentLastName,  String password, List<Course> courses, String newEmailAdress) {
+
+	//Misschien is het teveel om zowel een studyprogram als een lijst van courses mee te geven
+	public Student(StudyProgram studyProgram, String studentFirstName,
+			String studentLastName, String password, List<Course> courses,
+			String newEmailAdress) {
 		this.studentFirstName = studentFirstName;
 		this.studentLastName = studentLastName;
 		this.studyProgram = studyProgram;
@@ -32,107 +34,89 @@ public class Student {
 		currentActivity = null;
 		oldActivityList = null;
 		milestoneList = null;
-		courses = null;
 	}
-	
-public String getStudentFirstName() {
+
+	public String getStudentFirstName() {
 		return studentFirstName;
 	}
 
-public void setStudentFirstName(String studentFirstName) {
-	this.studentFirstName = studentFirstName;
-}
+	public void setStudentFirstName(String studentFirstName) {
+		this.studentFirstName = studentFirstName;
+	}
 
-public String getStudentLastName() {
+	public String getStudentLastName() {
 		return studentLastName;
 	}
 
-public void setStudentLastName(String studentLastName) {
+	public void setStudentLastName(String studentLastName) {
 		this.studentLastName = studentLastName;
 	}
 
-public StudyProgram getStudyProgram() {
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	public void addCourse(Course course) {
+		if (course != null) {
+			getCourses().add(course);
+		}
+	}
+
+	public void removeCourse(Course course) {
+		if (course != null && getCourses().contains(course)) {
+			getCourses().remove(course);
+		}
+	}
+
+	public StudyProgram getStudyProgram() {
 		return studyProgram;
 	}
-	public List<Course> getCourses() {
-	return courses;
-}
 
-public void setCourses(List<Course> courses) {
-	this.courses = courses;
-}
-public void addCourse(Course course){
-	if( course != null){
-	getCourses().add(course);
+	public void setStudyProgram(StudyProgram studyProgram) {
+		if (studyProgram != null) {
+			this.studyProgram = studyProgram;
+		}
 	}
-}
-public void removeCourse(Course course){
-	if(course != null && getCourses().contains(course)){
-		getCourses().remove(course);
-	}
-}
-
-public void setStudyProgram(StudyProgram studyProgram) {
-	if(studyProgram != null){
-		this.studyProgram = studyProgram;
-	}
-}
-public String getEmailAdress()
-{
-	return emailAdress;
-}
 	
+	public String getEmailAdress() {
+		return emailAdress;
+	}
+
 	public void setEmailAdress(String emailAdress) {
-	this.emailAdress = emailAdress;
-}
-
-	public void setPassword(String newPassword){
-		this.password = newPassword;
+		this.emailAdress = emailAdress;
 	}
-	
-	public String getPassword(){
+
+	public void setPassword(String newPassword) {
+		if(newPassword != null){
+		this.password = newPassword;
+		}
+	}
+
+	public String getPassword() {
 		return password;
 	}
-	
-	public long getStudentID(){
+
+	public long getStudentID() {
 		return studentID;
 	}
-	
-	public List<Milestone> getMilestones(){
+
+	public List<Milestone> getMilestones() {
 		return milestoneList;
 	}
-	
-	public void addMilestone (Milestone newMilestone){
+
+	public void addMilestone(Milestone newMilestone) {
 		milestoneList.add(newMilestone);
 	}
-	
-	public void removeMilestone (Milestone delMilestone){
 
-		if (milestoneList.contains(delMilestone)){
+	public void removeMilestone(Milestone delMilestone) {
+
+		if (milestoneList.contains(delMilestone)) {
 			milestoneList.remove(delMilestone);
 		}
-	}
-
-	public boolean startActivity(Activity newActivity){
-		
-		if (getCurrentActivity() == null){
-			setCurrentActivity(newActivity);
-			return true;
-		}
-		
-		return false;
-		
-	}
-	
-	public boolean stopActivity(){
-		if(getCurrentActivity() == null){
-			return false;
-		}
-		
-		oldActivityList.add(currentActivity);
-		setCurrentActivity(null);
-		return true;	
-		
 	}
 
 	public Activity getCurrentActivity() {
@@ -143,15 +127,6 @@ public String getEmailAdress()
 		this.currentActivity = currentActivity;
 	}
 
-	public boolean cancelActivity(){
-		if(getCurrentActivity() == null){
-			return false;
-		}
-		
-		setCurrentActivity(null);
-		return true;
-		
-	}
 
 	public List<Activity> getOldActivityList() {
 		return oldActivityList;
@@ -160,15 +135,15 @@ public String getEmailAdress()
 	public void setOldActivityList(List<Activity> oldActivityList) {
 		this.oldActivityList = oldActivityList;
 	}
-	
-	public void addActivityToOldActivityList(Activity activity){
+
+	public void addActivityToOldActivityList(Activity activity) {
 		getOldActivityList().add(activity);
 	}
-	public void removeFromOldActivityList(Activity activity){
-		if(getOldActivityList().contains(activity)){
+
+	public void removeFromOldActivityList(Activity activity) {
+		if (getOldActivityList().contains(activity)) {
 			getOldActivityList().remove(activity);
 		}
 	}
-	
-	
+
 }

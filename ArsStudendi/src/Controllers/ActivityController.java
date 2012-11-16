@@ -1,8 +1,8 @@
 package Controllers;
 
 import java.util.Calendar;
-import DomainModel.Activity;
 import DomainModel.*;
+import activityTypePackage.ActivityType;
 
 
 public class ActivityController {

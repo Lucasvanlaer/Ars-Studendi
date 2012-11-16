@@ -1,39 +1,34 @@
 package DomainModel;
+
 import java.util.*;
+import javax.persistence.*;
 
+@Entity
 public class StudyProgram {
-private List<Course> courseList;
-private String name;
-private Long studyProgramID;
+	private List<Course> courseList;
+	private String name;
+	@Id private Long studyProgramID;
 
-
-public StudyProgram(List<Course> courseList, String name, Long studyProgramID)
-{
-	this.courseList = courseList;
-	this.name=name;
-	this.studyProgramID = studyProgramID;
-}
-public void addCourse(Course newCourse){
-	if (courseList.contains(newCourse)==false){
-		courseList.add(newCourse);
+	public StudyProgram(List<Course> courseList, String name,Long studyProgramID) {
+		this.courseList = courseList;
+		this.name = name;
+		this.studyProgramID = studyProgramID;
 	}
 
-}
-public void removeCourse(Course oldCourse){
-	int i=0;
-	boolean found = false;
-	while(found==false && i<=courseList.size()-1 ){
-		if (courseList.get(i)==oldCourse){
-			courseList.remove(i);
-			found = true;
+	public void addCourse(Course newCourse) {
+		if (!courseList.contains(newCourse)) {
+			courseList.add(newCourse);
 		}
-		else{
-			i++;
+	}
+
+	public void removeCourse(Course oldCourse) {
+		if (courseList.contains(oldCourse)){
+			courseList.remove(oldCourse);
 		}
-}
-}
-public Long getStudyProgramID(){
-	return studyProgramID;
-}
+	}
+
+	public Long getStudyProgramID() {
+		return studyProgramID;
+	}
 
 }

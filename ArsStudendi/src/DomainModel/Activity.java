@@ -1,25 +1,27 @@
 package DomainModel;
+
 import java.util.*;
+import activityTypePackage.ActivityType;
 
 public class Activity {
 	private Calendar startTime;
 	private Calendar stopTime;
-	private long studentID;
+	private Long studentID;
 	private String activityName;
 	private ActivityType activityType;
 	
-	public Activity(Calendar startTime, long studentID, String activityName){
+	public Activity(Calendar startTime, Long studentID, String activityName){
 		setStartTime(startTime);
 		setStudentID(studentID);
 		setName(activityName);
 		
 	}
 
-	public long getStudentID(){
+	public Long getStudentID(){
 		return studentID;
 	}
 	
-	public void setStudentID(long studentID) {
+	public void setStudentID(Long studentID) {
 		this.studentID = studentID;
 	}
 
