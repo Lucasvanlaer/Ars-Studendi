@@ -4,8 +4,6 @@ import Controllers.Objectifiable;
 import DomainModel.*;
 import java.util.*;
 
-//import com.googlecode.objectify.ObjectifyService;
-
 public class CourseRegistry extends Objectifiable {
 
 	private static CourseRegistry _singletonObject;
