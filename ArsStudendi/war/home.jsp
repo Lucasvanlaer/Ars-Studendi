@@ -14,7 +14,7 @@
 	<div data-role="header" data-theme="b">
 		<a href="index.html" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
 		<h1>Register</h1>
-		<a href="Register.jsp" data-role="button" data-icon="check">Sign Up</a> 
+		<a href="register.jsp" data-role="button" data-icon="check" target="_self">Sign Up</a> 
 	</div><!-- /header -->
 	
 

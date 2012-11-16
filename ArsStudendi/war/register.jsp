@@ -11,17 +11,20 @@
 	
 	
 	<script type="text/javascript">
-	
-		var firstName = document.getElementById("firstName").innerHTML;
-		var lastName = document.getElementById("lastName").innerHTML;
+
+	$(document).ready(function() {
+  		var name = document.getElementById("studentName").innerHTML;
 		var pass = document.getElementById("password").innerHTML;
 		var email = document.getElementById("emailAdress").innerHTML;
-		//var ID = document.getElementById("studentID").innerHTML;
+		emptyFields();
+	});
 		
-	function emptyFields() {
+
+		
+ 	function emptyFields() {
 		
 	alert("test");
-		if(name == "" || pass == "" || email == "" || ID == "") {
+		if(name == "") {
 			$('[type="submit"]').button('disable');
 			$('[type="submit"]').button('refresh');	
 		}
@@ -37,9 +40,12 @@
 	
 	
 </head> 
-<body onload="emptyFields()"> 
+<body> 
 
-<div data-role="page" data-url="/register">
+<script>
+
+</script>
+<div data-role="page">
 
 	<div data-role="header" data-theme="b">
 		<h1>Register</h1>
@@ -49,23 +55,19 @@
 		<p>Sign up for an ArsStudendi account and enjoy the benefits of learning analytics!</p>		
 	</div><!-- /content -->
 
-	<div data-role"content">
+	<div data-role="content">
 	
 	<form action="/index.html" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="firstName" id="firstName" value="" placeholder="firstName"/>
-		</div>
-		
-		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="lastName" id="lastName" value="" placeholder="lastNname"/>
+			<input type="text" name="studentName" id="studentName" value="" placeholder="Username" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain">
-    		<input type="password" name="password" id="password" value="" placeholder="password"/>
+    		<input type="password" name="password" id="password" value="" placeholder="Password" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail"/>
+			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail" onchange="emptyFields()"/>
 		</div>
 		
 		<label for="select-choice-0" class="select">Study Program</label>
@@ -81,6 +83,27 @@
 			<input type="checkbox" name="<script>//courseNames.get(i);</script>" id="courses" class="custom" />
 			<label for="courses"><script>//courseNames.get(i);</script> </label>
 			<script> //} </script>
+		</div>
+		
+		<input type="submit" value="Submit Button"  />	 
+		
+		
+	</form>
+	
+	
+	<div data-role="popup" id="emptyField">
+		<p>hello<p>
+	</div>
+	
+	</div>
+	
+	
+	
+	
+</div><!-- /page -->
+
+</body>
+</html>script>
 		</div>
 		
 		<input type="submit" value="Submit Button"  />	 
