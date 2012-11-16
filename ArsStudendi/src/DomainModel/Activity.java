@@ -1,67 +1,105 @@
 package DomainModel;
 
 import java.util.*;
-import activityTypePackage.ActivityType;
 
 public class Activity {
 	private Calendar startTime;
 	private Calendar stopTime;
-	private Long studentID;
+	private long studentID;
 	private String activityName;
 	private ActivityType activityType;
-	
-	public Activity(Calendar startTime, Long studentID, String activityName){
+
+	public Activity(Calendar startTime, long studentID, String activityName) {
 		setStartTime(startTime);
 		setStudentID(studentID);
 		setName(activityName);
-		
+
 	}
 
-	public Long getStudentID(){
+	public long getStudentID() {
 		return studentID;
 	}
-	
-	public void setStudentID(Long studentID) {
-		this.studentID = studentID;
-	}
 
-	public Calendar getStartTime(){
+	/**
+	 * @return startTime: de starttijd van de activiteit wordt geretourneerd
+	 */
+	public Calendar getStartTime() {
 		return startTime;
 	}
-	
+
+	/**
+	 * verander de startTime van de activity
+	 * 
+	 * @param startTime
+	 *            : het tijdstip waarop de activiteit gestart is
+	 */
 	public void setStartTime(Calendar startTime) {
 		this.startTime = startTime;
 	}
 
-	public Calendar getStopTime(){
+	/**
+	 * 
+	 * @return stopTime: de stoptijd wordt geretourneerd
+	 */
+	public Calendar getStopTime() {
 		return stopTime;
 	}
-	
+
+	/**
+	 * verander de stoptijd
+	 * 
+	 * @param stoptime
+	 *            : het tijdstip waarop de activieit gestopt is.
+	 */
 	public void setStopTime(Calendar stopTime) {
 		this.stopTime = stopTime;
 	}
 
-	public long getTimePassed(){
-		if (stopTime == null){
+	/**
+	 * @return now.getTimeInMillis() - startTime.getTimeInMillis(): geeft de
+	 *         tijd die gepasseerd is sinds de activiteit gestart is, of de duur
+	 *         van de activiteit
+	 */
+	public long getDurationActivity() {
+		if (stopTime == null) {
 			Calendar now = Calendar.getInstance();
-			return now.getTimeInMillis()-startTime.getTimeInMillis();
+			return now.getTimeInMillis() - startTime.getTimeInMillis();
 		}
-		return stopTime.getTimeInMillis()-startTime.getTimeInMillis();				
+		return stopTime.getTimeInMillis() - startTime.getTimeInMillis();
 	}
-	
-	
-	public String getName(){
+
+	/**
+	 * @return de naam van de activiteit
+	 */
+	public String getName() {
 		return activityName;
 	}
-	
-	public void setName(String newName){
+
+	/**
+	 * verander de naam van de activiteit
+	 * 
+	 * @param de
+	 *            nieuwe naam voor de activiteit
+	 */
+	public void setName(String newName) {
 		activityName = newName;
-	}	
-	public void setActivityType(ActivityType activityType){
-		this.activityType= activityType;
 	}
-	public ActivityType getActivityType(){
+
+	/**
+	 * verander het type van de activiteit
+	 * 
+	 * @param activityType
+	 *            : het type van de activiteit
+	 */
+	public void setActivityType(ActivityType activityType) {
+		this.activityType = activityType;
+	}
+
+	/**
+	 * @return activityType: het type van de activiteit.
+	 */
+
+	public ActivityType getActivityType() {
 		return activityType;
 	}
 }
-
