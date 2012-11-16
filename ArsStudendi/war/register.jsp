@@ -89,9 +89,14 @@
 			<script> //} </script>
 		</div>
 		
-		<div data-role="controlgroup" data-type="horizontal">
-		<input type="submit" value="Register"  />	 
-		<a href="home.jsp" data-role="button">Cancel</a>
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a"><button type="submit" data-theme="b">Submit</button></div>
+			<div class="ui-block-b"><a href="home.jsp" data-role="button">Cancel</a></button></div>	   
+		</fieldset>
+		
+		
+
+		
 		
 	</form>
 	
