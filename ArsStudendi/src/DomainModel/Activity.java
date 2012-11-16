@@ -6,6 +6,7 @@ public class Activity {
 	private Calendar stopTime;
 	private long studentID;
 	private String activityName;
+	private ActivityType activityType;
 	
 	public Activity(Calendar startTime, long studentID, String activityName){
 		setStartTime(startTime);
@@ -53,6 +54,9 @@ public class Activity {
 	
 	public void setName(String newName){
 		activityName = newName;
-	}		
+	}	
+	public void setActivityType(ActivityType activityType){
+		
+	}
 }
 

@@ -4,7 +4,7 @@ import java.util.Calendar;
 import DomainModel.Activity;
 import DomainModel.Student;
 
-public class TimerController {
+public class ActivityController {
 
 public boolean startActivity(Student student, String activityName){
 	boolean succeed = false;
