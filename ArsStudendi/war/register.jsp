@@ -74,19 +74,30 @@
 			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail" onchange="emptyFields()"/>
 		</div>
 		
+
 		<label for="select-choice-0" class="select">Study Program</label>
 			<select name="studyProgram" id="studyProgram">
-   			<option value="2 semester ingenieurswetenschappen: algemene richting">2 semester ingenieurswetenschappen: algemene richtlijnen</option>
-   			<option value="3e semester ingenieurswetenschappen: algemene richting">3e semester ingenieurswetenschappen: algemene richting</option>
+   			<option value=1>TESTPROGRAM1</option>
+   			<option value=2>TESTPROGRAM2</option>
+   			<option value=3>TESTPROGRAM3</option>
+   			<option value=4>TESTPROGRAM4</option>
+   			<option value=5>TESTPROGRAM5</option>
+   			<option value=6>TESTPROGRAM6</option>
 		</select>
 		
-		<div data-role="controlgroup" class="ui-controlgroup-checkboxes">
-			<script>
-				//for(int i = 0; i<courseNames.length; i++) {
-			</script>
-			<input type="checkbox" name="<script>//courseNames.get(i);</script>" id="courses" class="custom" />
-			<label for="courses"><script>//courseNames.get(i);</script> </label>
-			<script> //} </script>
+		<div data-role="fieldcontain">
+			<fieldset data-role="controlgroup">
+			<legend>Courses:</legend>
+			<%
+				String[] courseNames = (String[])request.getAttribute("courseNames");
+				int i = 0;
+				if( courseNames != courseNames){
+				while(i<courseNames.length) {
+			%>
+			<input type="checkbox" name=<% out.println(courseNames[i]);%> id="courses" class="custom" />
+			<label for="courses"> <%out.println(courseNames[i]);%>" </label>
+			<% i++; } }%>
+			</fieldset>
 		</div>
 		
 		<fieldset class="ui-grid-a">
