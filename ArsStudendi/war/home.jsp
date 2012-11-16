@@ -20,7 +20,7 @@
 	<div data-role="content">
 		<form action="index.html" method="post">
 			<div data-role="fieldcontain" class="ui-hide-label">
-				<input type="text" name="email" id="email" value="" placeholder="e-mailadress" class="center-button"/>
+				<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mailadress" class="center-button"/>
 			</div>
 			
 			<div data-role="fieldcontain" class="ui-hide-label">
