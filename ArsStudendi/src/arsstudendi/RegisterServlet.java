@@ -6,6 +6,9 @@ import Controllers.*;
 import java.util.*;
 import java.io.IOException;
 import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+
 
 
 @SuppressWarnings("serial")
@@ -30,6 +33,7 @@ public class RegisterServlet extends HttpServlet {
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String[] courseNames = controller.getCourseNames();
 		req.setAttribute("courseNames", courseNames);
+		
 //		String s = null;
 				
 //		if(!controller.checkPassword(password)){
