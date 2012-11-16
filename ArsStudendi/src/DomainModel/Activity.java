@@ -1,6 +1,7 @@
 package DomainModel;
 
 import java.util.*;
+import activityTypePackage.*;
 
 public class Activity {
 	private Calendar startTime;
@@ -14,6 +15,18 @@ public class Activity {
 		setStudentID(studentID);
 		setName(activityName);
 
+	}
+
+	public String getActivityName() {
+		return activityName;
+	}
+
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
+	}
+
+	public void setStudentID(long studentID) {
+		this.studentID = studentID;
 	}
 
 	public long getStudentID() {
