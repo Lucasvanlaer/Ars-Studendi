@@ -11,8 +11,6 @@ public class CourseRegistry extends Objectifiable{
 	public static ArrayList<Course> courses;
 	public static String[] arr = { "TESTCOURSE1", "TESTCOURSE2", "TESTCOURSE3", "TESTCOURSE4", "TESTCOURSE5", "TESTCOURSE6"};
 	static{
-		
-
 	int length = 6 ;
 	int i =1;
 	while (i<length+1){
