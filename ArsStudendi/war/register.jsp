@@ -12,10 +12,11 @@
 	
 	<script type="text/javascript">
 	
-		var name = document.getElementById("studentName").innerHTML;
+		var firstName = document.getElementById("firstName").innerHTML;
+		var lastName = document.getElementById("lastName").innerHTML;
 		var pass = document.getElementById("password").innerHTML;
 		var email = document.getElementById("emailAdress").innerHTML;
-		var ID = document.getElementById("studentID").innerHTML;
+		//var ID = document.getElementById("studentID").innerHTML;
 		
 	function emptyFields() {
 		
@@ -52,19 +53,19 @@
 	
 	<form action="/index.html" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="studentName" id="studentName" value="" placeholder="Username"/>
+			<input type="text" name="firstName" id="firstName" value="" placeholder="firstName"/>
+		</div>
+		
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<input type="text" name="lastName" id="lastName" value="" placeholder="lastNname"/>
 		</div>
 		
 		<div data-role="fieldcontain">
-    		<input type="password" name="password" id="password" value="" placeholder="Password"/>
+    		<input type="password" name="password" id="password" value="" placeholder="password"/>
 		</div>
 		
 		<div data-role="fieldcontain" class="ui-hide-label">
 			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail"/>
-		</div>
-		
-		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="studentID" id="studentID" value="" placeholder="r-nummer"/>
 		</div>
 		
 		<label for="select-choice-0" class="select">Study Program</label>
