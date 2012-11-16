@@ -20,9 +20,18 @@ public boolean startActivity(Student student, String activityName){
 return succeed;	
 }
 
+/**
+ * Stops the current activity of the given student (if he has one) and gives this activity an instance of the class ActivityType.
+ * The current activity will be added to the list of the old activities of the student. 
+ * Afterwards, the current activity of the student will be set to null.
+ * 
+ * @param student the student whose current activity, if any, has to be
+ * @param activityType
+ * @return true if (student != null && activityType != null && student.getCurrentActivity() !=null)
+ */
 public boolean stopActivity(Student student, ActivityType activityType){
 	boolean succeed = false;
-	if(student != null && student.getCurrentActivity() !=null){
+	if(student != null && activityType != null && student.getCurrentActivity() !=null){
 		Activity tempActivity = student.getCurrentActivity();
 		tempActivity.setActivityType(activityType);
 		student.addActivityToOldActivityList(tempActivity);
