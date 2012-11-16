@@ -1,5 +1,5 @@
 package DomainModel;
 
-public class Sleep extends ActivityTypeClass{
+public class Sleep extends ActivityType{
 
 }

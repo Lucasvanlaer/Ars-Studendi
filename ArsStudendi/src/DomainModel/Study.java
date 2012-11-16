@@ -1,6 +1,6 @@
 package DomainModel;
 
-public class Study extends ActivityTypeClass {
+public class Study extends ActivityType {
 
 	private Course course;
 	

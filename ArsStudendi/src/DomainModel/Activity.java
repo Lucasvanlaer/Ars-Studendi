@@ -56,7 +56,10 @@ public class Activity {
 		activityName = newName;
 	}	
 	public void setActivityType(ActivityType activityType){
-		
+		this.activityType= activityType;
+	}
+	public ActivityType getActivityType(){
+		return activityType;
 	}
 }
 

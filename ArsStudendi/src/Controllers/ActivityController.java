@@ -2,7 +2,8 @@ package Controllers;
 
 import java.util.Calendar;
 import DomainModel.Activity;
-import DomainModel.Student;
+import DomainModel.*;
+
 
 public class ActivityController {
 
@@ -19,10 +20,11 @@ public boolean startActivity(Student student, String activityName){
 return succeed;	
 }
 
-public boolean stopActivity(Student student){
+public boolean stopActivity(Student student, ActivityType activityType){
 	boolean succeed = false;
 	if(student != null && student.getCurrentActivity() !=null){
 		Activity tempActivity = student.getCurrentActivity();
+		tempActivity.setActivityType(activityType);
 		student.addActivityToOldActivityList(tempActivity);
 		student.setCurrentActivity(null);
 		succeed = true;
