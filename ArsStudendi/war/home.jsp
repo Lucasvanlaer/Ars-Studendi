@@ -12,11 +12,27 @@
 <div data-role="page">
 
 	<div data-role="header" data-theme="b">
-		<a href="index.html" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
-		<h1>Register</h1>
-		<a href="Register.jsp" data-role="button" data-icon="check">Sign Up</a> 
+		<h1>Log In</h1>
+		<a href="register.jsp" data-role="button" data-icon="check" target="_self" class="ui-btn-right">Sign Up</a> 
 	</div><!-- /header -->
 	
+	
+	<div data-role="content">
+		<form action="index.html" method="post">
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mailadress" class="center-button"/>
+			</div>
+			
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="password" id="password" value="" placeholder="password" class="center-button"/>
+			</div>
+			
+			
+			<input type="submit" value="Log In" />
+			
+		</form>
+		
+	</div>
 
 </body>
 </html>

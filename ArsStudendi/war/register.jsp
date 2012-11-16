@@ -11,17 +11,20 @@
 	
 	
 	<script type="text/javascript">
-	
-		var firstName = document.getElementById("firstName").innerHTML;
-		var lastName = document.getElementById("lastName").innerHTML;
-		var pass = document.getElementById("password").innerHTML;
-		var email = document.getElementById("emailAdress").innerHTML;
-		//var ID = document.getElementById("studentID").innerHTML;
+
+	$(document).ready(function() {
+		emptyFields();
+	});
 		
-	function emptyFields() {
+
 		
-	alert("test");
-		if(name == "" || pass == "" || email == "" || ID == "") {
+ 	function emptyFields() {
+		var name = $("#studentName").val();
+		var lName = $("#studentLastName").val();
+		var pass = $("#password").val();
+		var email = $("#emailAdress").val();
+		
+		if(name == "" || lName == "" || pass == "" || email == "") {
 			$('[type="submit"]').button('disable');
 			$('[type="submit"]').button('refresh');	
 		}
@@ -37,9 +40,12 @@
 	
 	
 </head> 
-<body onload="emptyFields()"> 
+<body> 
 
-<div data-role="page" data-url="/register">
+<script>
+
+</script>
+<div data-role="page">
 
 	<div data-role="header" data-theme="b">
 		<h1>Register</h1>
@@ -49,23 +55,23 @@
 		<p>Sign up for an ArsStudendi account and enjoy the benefits of learning analytics!</p>		
 	</div><!-- /content -->
 
-	<div data-role"content">
+	<div data-role="content">
 	
 	<form action="/index.html" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="firstName" id="firstName" value="" placeholder="firstName"/>
+			<input type="text" name="studentName" id="studentName" value="" placeholder="First Name" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="lastName" id="lastName" value="" placeholder="lastNname"/>
+			<input type="text" name="studentLastName" id="studentLastName" value="" placeholder="Last Name" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain">
-    		<input type="password" name="password" id="password" value="" placeholder="password"/>
+    		<input type="password" name="password" id="password" value="" placeholder="Password" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail"/>
+			<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mail" onchange="emptyFields()"/>
 		</div>
 		
 		<label for="select-choice-0" class="select">Study Program</label>
@@ -83,21 +89,19 @@
 			<script> //} </script>
 		</div>
 		
-		<input type="submit" value="Submit Button"  />	 
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a"><button type="submit" data-theme="b">Submit</button></div>
+			<div class="ui-block-b"><a href="home.jsp" data-role="button">Cancel</a></button></div>	   
+		</fieldset>
+		
+		
+
 		
 		
 	</form>
 	
 	
-	<div data-role="popup" id="emptyField">
-		<p>hello<p>
-	</div>
-	
-	</div>
-	
-	
-	
-	
+
 </div><!-- /page -->
 
 </body>
