@@ -13,18 +13,18 @@
 	<script type="text/javascript">
 
 	$(document).ready(function() {
-  		var name = document.getElementById("studentName").innerHTML;
-		var pass = document.getElementById("password").innerHTML;
-		var email = document.getElementById("emailAdress").innerHTML;
 		emptyFields();
 	});
 		
 
 		
  	function emptyFields() {
+		var name = $("#studentName").val();
+		var lName = $("#studentLastName").val();
+		var pass = $("#password").val();
+		var email = $("#emailAdress").val();
 		
-	alert("test");
-		if(name == "") {
+		if(name == "" || lName == "" || pass == "" || email == "") {
 			$('[type="submit"]').button('disable');
 			$('[type="submit"]').button('refresh');	
 		}
@@ -59,7 +59,11 @@
 	
 	<form action="/index.html" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="studentName" id="studentName" value="" placeholder="Username" onchange="emptyFields()"/>
+			<input type="text" name="studentName" id="studentName" value="" placeholder="First Name" onchange="emptyFields()"/>
+		</div>
+		
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<input type="text" name="studentLastName" id="studentLastName" value="" placeholder="Last Name" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain">
@@ -85,42 +89,14 @@
 			<script> //} </script>
 		</div>
 		
-		<input type="submit" value="Submit Button"  />	 
-		
+		<div data-role="controlgroup" data-type="horizontal">
+		<input type="submit" value="Register"  />	 
+		<a href="home.jsp" data-role="button">Cancel</a>
 		
 	</form>
 	
 	
-	<div data-role="popup" id="emptyField">
-		<p>hello<p>
-	</div>
-	
-	</div>
-	
-	
-	
-	
-</div><!-- /page -->
 
-</body>
-</html>script>
-		</div>
-		
-		<input type="submit" value="Submit Button"  />	 
-		
-		
-	</form>
-	
-	
-	<div data-role="popup" id="emptyField">
-		<p>hello<p>
-	</div>
-	
-	</div>
-	
-	
-	
-	
 </div><!-- /page -->
 
 </body>
