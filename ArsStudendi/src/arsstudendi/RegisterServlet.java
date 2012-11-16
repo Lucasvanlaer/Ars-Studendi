@@ -32,8 +32,15 @@ public class RegisterServlet extends HttpServlet {
 		
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String[] courseNames = controller.getCourseNames();
+		System.out.println(courseNames);
 		req.setAttribute("courseNames", courseNames);
 		
+		try {
+			req.getRequestDispatcher("/register.jsp").forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	}
 //		String s = null;
 				
 //		if(!controller.checkPassword(password)){

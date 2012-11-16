@@ -91,11 +91,11 @@
 			<%
 				String[] courseNames = (String[])request.getAttribute("courseNames");
 				int i = 0;
-				if( courseNames != courseNames){
+				if( courseNames != null){
 				while(i<courseNames.length) {
 			%>
-			<input type="checkbox" name=<% out.println(courseNames[i]);%> id="courses" class="custom" />
-			<label for="courses"> <%out.println(courseNames[i]);%>" </label>
+			<input type="checkbox" name=<% out.println(courseNames[i]);%> id=<% out.println(courseNames[i]);%> class="custom" />
+			<label for=<% out.println(courseNames[i]);%>> <% out.println(courseNames[i]);%> </label>
 			<% i++; } }%>
 			</fieldset>
 		</div>
