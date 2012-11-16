@@ -21,8 +21,8 @@ public class RegisterController {
 		//Tijdelijk wegens niet static
 		for(String strCourse: StrCourses){
 			Long courseID = Long.valueOf(strCourse);
-			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
-			courses.add(course);	
+//			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
+//			courses.add(course);	
 		}
 		
 	Student student = new Student(studyProgram, studentFirstName, studentLastName, password, courses, newEmailAdress);
@@ -51,8 +51,8 @@ public class RegisterController {
 		List<Course> courses = new ArrayList<Course>();
 		for(String strCourse: courseList){
 			Long courseID = Long.valueOf(strCourse);
-			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
-			courses.add(course);	
+//			Course course = CourseRegistry.getSingletonObject().getCourse(courseID);
+//			courses.add(course);	
 		}
 		if(courses.size()==0){return false;}else{return true;}
 	}

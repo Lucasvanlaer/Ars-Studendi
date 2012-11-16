@@ -33,7 +33,7 @@
 
 	<div data-role="header" data-theme="b">
 		<h1>Log In</h1>
-		<a href="register.jsp" data-role="button" data-icon="check" target="_self" class="ui-btn-right">Sign Up</a> 
+		<a href="register" data-role="button" data-icon="check" target="_self" class="ui-btn-right">Sign Up</a> 
 	</div><!-- /header -->
 	
 	

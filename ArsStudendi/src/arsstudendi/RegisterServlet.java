@@ -10,6 +10,7 @@ import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
 public class RegisterServlet extends HttpServlet {
+	RegisterController controller = new RegisterController();
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		String strStudyProgram = req.getParameter("studyProgram");
@@ -23,9 +24,13 @@ public class RegisterServlet extends HttpServlet {
 		String[] strCourses = req.getParameterValues("courses");
 		List<String> courses = Arrays.asList(strCourses);  
 		String emailAdress = req.getParameter("emailAdress");
+		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
+		}
 		
-		RegisterController controller = new RegisterController();
-		String s = null;
+		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		String[] courseNames = controller.getCourseNames();
+		req.setAttribute("courseNames", courseNames);
+//		String s = null;
 				
 //		if(!controller.checkPassword(password)){
 //			s = "Password is empty";
@@ -47,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
 //		resp.sendRedirect("/guestbook.jsp?emptyFields=" + s);
 		
 		//controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
-		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
+		
 			
 		
 		
