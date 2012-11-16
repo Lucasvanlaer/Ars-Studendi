@@ -10,8 +10,9 @@ import Controllers.Objectifiable;
 
 public class StudyProgramRegistry extends Objectifiable {
 	private static StudyProgramRegistry _singletonObject;
-	public static ArrayList<StudyProgram> studyPrograms;
+	public ArrayList<StudyProgram> studyPrograms;
 	public static String[] arr = { "TESTPROGRAM1", "TESTPROGRAM2", "TESTPROGRAM3", "TESTPROGRAM4", "TESTPROGRAM5", "TESTPROGRAM6"};
+	
 	static{
 	ArrayList<Course> courses = CourseRegistry.getSingletonObject().getCourseList();
 	int length = 6 ;
