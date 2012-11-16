@@ -27,24 +27,24 @@ public class RegisterServlet extends HttpServlet {
 		RegisterController controller = new RegisterController();
 		String s = null;
 				
-		if(!controller.checkPassword(password)){
-			s = "Password is empty";
-			}
-		if(!controller.checkUser(studentFirstName)){
-			s += "User's first name is empty";
-			}
-		if(!controller.checkUser(studentLastName)){
-			s += "User's last name is empty";
-			}
-		if(!controller.checkEmail(emailAdress)){
-			s += "E-mail is empty";
-			}
-		if(!controller.checkList(courses)){
-			s += "Courses are empty";
-			}
-		
-		
-		resp.sendRedirect("/guestbook.jsp?emptyFields=" + s);
+//		if(!controller.checkPassword(password)){
+//			s = "Password is empty";
+//			}
+//		if(!controller.checkUser(studentFirstName)){
+//			s += "User's first name is empty";
+//			}
+//		if(!controller.checkUser(studentLastName)){
+//			s += "User's last name is empty";
+//			}
+//		if(!controller.checkEmail(emailAdress)){
+//			s += "E-mail is empty";
+//			}
+//		if(!controller.checkList(courses)){
+//			s += "Courses are empty";
+//			}
+//		
+//		
+//		resp.sendRedirect("/guestbook.jsp?emptyFields=" + s);
 		
 		//controller.makeStudent(studyProgram, studentName, studentID, password, courses, emailAdress);
 		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
