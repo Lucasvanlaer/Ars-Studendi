@@ -57,7 +57,7 @@
 
 	<div data-role="content">
 	
-	<form action="/index.html" method="post">
+	<form action="/register" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
 			<input type="text" name="studentName" id="studentName" value="" placeholder="First Name" onchange="emptyFields()"/>
 		</div>
@@ -94,7 +94,7 @@
 				if( courseNames != null){
 				while(i<courseNames.length) {
 			%>
-			<input type="checkbox" name=<% out.println(courseNames[i]);%> id=<% out.println(courseNames[i]);%> class="custom" />
+			<input type="checkbox" name=<% out.println(courseNames[i]);%> id=<% out.println(courseNames[i]);%> class="custom" value="out.println(courseNames[i])"/>
 			<label for=<% out.println(courseNames[i]);%>> <% out.println(courseNames[i]);%> </label>
 			<% i++; } }%>
 			</fieldset>
@@ -110,6 +110,7 @@
 		
 		
 	</form>
+
 	
 	
 

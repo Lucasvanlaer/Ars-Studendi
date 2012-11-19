@@ -16,7 +16,7 @@ public class RegisterServlet extends HttpServlet {
 	RegisterController controller = new RegisterController();
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-		String strStudyProgram = req.getParameter("studyProgram");
+		String strStudyProgram = req.getParameter("select-choice-0");
 		Long studyProgram = Long.valueOf(strStudyProgram);	
 				//Opletten met mogelijke exceptions
 		String studentFirstName = req.getParameter("studentFirstName");
@@ -24,10 +24,12 @@ public class RegisterServlet extends HttpServlet {
 		//String StrStudentID = req.getParameter ("studentID");
 		//Long studentID = Long.valueOf(StrStudentID);
 		String password = req.getParameter("password");
+		
 		String[] strCourses = req.getParameterValues("courses");
 		List<String> courses = Arrays.asList(strCourses);  
 		String emailAdress = req.getParameter("emailAdress");
 		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
+		resp.sendRedirect("/index.html");
 		}
 		
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
