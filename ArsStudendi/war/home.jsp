@@ -1,7 +1,6 @@
 !DOCTYPE html> 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="ArsStudendi.src.arsstudendi.DomainModel.student" %>
 <html> 
 <head> 
 	<title>ArsStudendi</title> 
@@ -29,6 +28,7 @@
 		emptyFields();
 	});
 	
+
 	
 	
 	</script>
@@ -52,16 +52,6 @@
 			<div data-role="fieldcontain" class="ui-hide-label">
     			<input type="password" name="password" id="password" value="" placeholder="password" class="center-button" onchange="emptyFields()" />
 			</div>	
-			
-			<% 
-			Student student = request.getAttribute("student");
-			if (student == null) {
-				alert("non-existing user");
-			}
-			else {
-				alert("succesfully logged in");
-			}
-			%>
 			
 			
 			<input type="submit" value="Log In"/>
