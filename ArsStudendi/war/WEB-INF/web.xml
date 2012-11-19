@@ -15,6 +15,15 @@
 		<servlet-name>Register</servlet-name>
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>ObjectifyTest</servlet-name>
+		<servlet-class>arsstudendi.ObjectifyTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ObjectifyTest</servlet-name>
+		<url-pattern>/objectifytest</url-pattern>
+	</servlet-mapping>
+	
 <servlet>
 		<servlet-name>LogIn</servlet-name>
 		<servlet-class>arsstudendi.LogInServlet</servlet-class>

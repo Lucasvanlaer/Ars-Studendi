@@ -1,6 +1,9 @@
 package Controllers;
 
 import java.util.Calendar;
+
+import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
+
 import DomainModel.*;
 import activityTypePackage.ActivityType;
 
@@ -29,17 +32,24 @@ return succeed;
  * @param activityType
  * @return true if (student != null && activityType != null && student.getCurrentActivity() !=null)
  */
-public boolean stopActivity(Student student, ActivityType activityType){
-	boolean succeed = false;
-	if(student != null && activityType != null && student.getCurrentActivity() !=null){
-		Activity tempActivity = student.getCurrentActivity();
-		tempActivity.setActivityType(activityType);
-		student.addActivityToOldActivityList(tempActivity);
-		student.setCurrentActivity(null);
-		succeed = true;
+	public boolean stopActivity(Student student, ActivityType activityType,
+			Course course) {
+		boolean succeed = false;
+		if (student != null && activityType != null
+				&& student.getCurrentActivity() != null) {
+
+			Activity tempActivity = student.getCurrentActivity();
+			tempActivity.setActivityType(activityType);
+			if (activityType instanceof activityTypePackage.Study) {
+				((activityTypePackage.Study) activityType).setCourse(course);
+			}
+			student.addActivityToOldActivityList(tempActivity);
+			student.setCurrentActivity(null);
+			succeed = true;
+
+		}
+		return succeed;
 	}
-return succeed;
-}
 
 public boolean cancelActivity(Student student){
 	boolean succeed = false;
@@ -64,5 +74,13 @@ public long getTimePassedCurrentActivity(Student student){
 	else return -1;
 }
 
- 
+public void changeCurrentActivityName(Student student, String newActivityName)
+{
+if(student.getCurrentActivity() != null){
+	student.getCurrentActivity().setActivityName(newActivityName);
+}
+}
+
+
+
 }
