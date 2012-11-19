@@ -16,7 +16,7 @@
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 		
-	//nuttelozecomment
+
 <servlet>
 		<servlet-name>LogIn</servlet-name>
 		<servlet-class>arsstudendi.LogInServlet</servlet-class>
