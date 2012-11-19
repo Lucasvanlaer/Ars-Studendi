@@ -1,7 +1,5 @@
 package arsstudendi;
 
-import DomainModel.Course;
-import DomainModel.StudyProgram;
 import Controllers.*;
 import java.util.*;
 import java.io.IOException;
@@ -16,9 +14,7 @@ public class RegisterServlet extends HttpServlet {
 	RegisterController controller = new RegisterController();
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-		String strStudyProgram = req.getParameter("select-choice-0");
-		Long studyProgram =
-				//Opletten met mogelijke exceptions
+		String studyProgram = req.getParameter("select-choice-0");		
 		String studentFirstName = req.getParameter("studentFirstName");
 		String studentLastName = req.getParameter("studentLastName");
 		//String StrStudentID = req.getParameter ("studentID");

@@ -30,5 +30,9 @@ public class StudyProgram {
 	public Long getStudyProgramID() {
 		return studyProgramID;
 	}
+	
+	public String getStudyProgramName() {
+		return name;
+	}
 
 }

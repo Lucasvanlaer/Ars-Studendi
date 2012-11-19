@@ -5,8 +5,6 @@ import com.googlecode.objectify.*;
 
 import Controllers.Objectifiable;
 import DomainModel.*;
-import Controllers.*;
-import arsstudendi.*;
 import java.util.*;
 
 public class StudentRegistry extends Objectifiable{
@@ -37,12 +35,25 @@ public class StudentRegistry extends Objectifiable{
 		}
 	}
 	
-	private StudyProgram makeProgramList(ArrayList<Course> courseL){
+	private ArrayList<Course> makeCourses(){
+		String[] arr = CourseRegistry.getSingletonObject().getCourseNames();
+		ArrayList<Course> courses = new ArrayList<Course>();
+		int length = 6;
+		int i = 1;
+		while (i < length + 1) {
+			Course course = new Course(arr[i], (long) i);
+			courses.add(course);
+			i++;
+		}
+		return courses;
+	}
+	
+	private ArrayList<StudyProgram> makeProgramList(ArrayList<Course> courseL){
 	ArrayList<Course> courses = courseL;
 	ArrayList<StudyProgram> studyPrograms = new ArrayList<StudyProgram>();
 	int length = 6 ;
 	int i =1;
-	String[] arr = CourseRegistry.getSingletonObject().getCourseNames();
+	String[] arr = StudyProgramRegistry.getSingletonObject().getStudyProgamNames();
 	while (i<length+1){
 		ArrayList<Course> courseList = new ArrayList<Course>();
 		if(i == 1){
@@ -78,7 +89,41 @@ public class StudentRegistry extends Objectifiable{
 		StudyProgram studyProgram = new StudyProgram(courseList, arr[i], (long) i);
 		studyPrograms.add(studyProgram);
 		i++;
-	}}
+	}
+	return studyPrograms;}
+	
+	public Course getCourse(String courseName) {
+	ArrayList<Course> courses = makeCourses();
+	for (Course course : courses) {
+		if (course.getCourseName() == courseName) {
+			return course;
+		}
+		
+
+	}
+	return null;
+	}
+	
+	public ArrayList<Course> getCourseList() {
+	ArrayList<Course> courses = makeCourses();
+	return courses;
+	}
+	
+	public StudyProgram getStudyProgram(String studyProgramName){
+	ArrayList<StudyProgram> studyPrograms = makeProgramList(makeCourses());
+	for (StudyProgram studyProgram: studyPrograms){
+		if (studyProgram.getStudyProgramName() == studyProgramName){
+			return studyProgram;
+		}
+
+	}
+	return null;
+	// should NEVER happen
+	// THIS CANNOT HAPPEN DO YOU HEAR ME
+
+	}
+	
+
 	
 	/**
 	* Vraagt het Studentobject uit de Google Datastore op die 
