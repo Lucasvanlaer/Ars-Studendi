@@ -1,4 +1,7 @@
 !DOCTYPE html> 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="ArsStudendi.src.arsstudendi.DomainModel.student" %>
 <html> 
 <head> 
 	<title>ArsStudendi</title> 
@@ -25,6 +28,9 @@
 	$(document).ready(function() {
 		emptyFields();
 	});
+	
+	
+	
 	</script>
 </head> 
 <body> 
@@ -38,7 +44,7 @@
 	
 	
 	<div data-role="content">
-		<form action="index.html" method="post">
+		<form id="logIn" action="index.html" method="post">
 			<div data-role="fieldcontain" class="ui-hide-label">
 				<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mailadress" class="center-button" onchange="emptyFields()"/>
 			</div>
@@ -47,12 +53,23 @@
     			<input type="password" name="password" id="password" value="" placeholder="password" class="center-button" onchange="emptyFields()" />
 			</div>	
 			
+			<% 
+			Student student = request.getAttribute("student");
+			if (student == null) {
+				alert("non-existing user");
+			}
+			else {
+				alert("succesfully logged in");
+			}
+			%>
 			
-			<input type="submit" value="Log In" />
+			
+			<input type="submit" value="Log In"/>
 			
 		</form>
 		
 	</div>
+	
 
 </body>
 </html>
