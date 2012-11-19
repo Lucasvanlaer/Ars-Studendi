@@ -54,7 +54,7 @@ return succeed;
  *
  */
 public static long getTimePassed(Activity activity){
-	return activity.getTimePassed();
+	return activity.getDurationActivity();
 }
 
 public long getTimePassedCurrentActivity(Student student){
