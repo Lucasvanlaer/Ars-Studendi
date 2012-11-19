@@ -4,8 +4,10 @@ package arsstudendi;
 import com.googlecode.objectify.*;
 
 import Controllers.Objectifiable;
-import DomainModel.Student;
+import DomainModel.*;
 import Controllers.*;
+import arsstudendi.*;
+import java.util.*;
 
 public class StudentRegistry extends Objectifiable{
 
@@ -34,6 +36,49 @@ public class StudentRegistry extends Objectifiable{
 			return false;
 		}
 	}
+	
+	private StudyProgram makeProgramList(ArrayList<Course> courseL){
+	ArrayList<Course> courses = courseL;
+	ArrayList<StudyProgram> studyPrograms = new ArrayList<StudyProgram>();
+	int length = 6 ;
+	int i =1;
+	String[] arr = CourseRegistry.getSingletonObject().getCourseNames();
+	while (i<length+1){
+		ArrayList<Course> courseList = new ArrayList<Course>();
+		if(i == 1){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(5)); 
+		}
+		if(i == 2){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(2)); 
+			courseList.add(courses.get(3)); 
+		}
+		if(i == 3){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(6)); 
+		}
+		if(i == 4){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(5)); 
+			courseList.add(courses.get(6)); 
+		}
+		if(i == 5){
+			courseList.add(courses.get(2)); 
+			courseList.add(courses.get(3)); 
+			courseList.add(courses.get(4)); 
+		}
+		if(i == 6){
+			courseList.add(courses.get(1)); 
+			courseList.add(courses.get(4)); 
+			courseList.add(courses.get(5)); 
+		}
+		StudyProgram studyProgram = new StudyProgram(courseList, arr[i], (long) i);
+		studyPrograms.add(studyProgram);
+		i++;
+	}}
 	
 	/**
 	* Vraagt het Studentobject uit de Google Datastore op die 
