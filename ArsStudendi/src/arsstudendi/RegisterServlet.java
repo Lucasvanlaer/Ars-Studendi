@@ -19,10 +19,11 @@ public class RegisterServlet extends HttpServlet {
 		String studentLastName = req.getParameter("studentLastName");
 		String password = req.getParameter("password");
 		String emailAdress = req.getParameter("emailAdress");
-		String studyProgram = req.getParameter("studyProgram");	
+		String nStudyProgram = req.getParameter("studyProgram");	
 		//String StrStudentID = req.getParameter ("studentID");
 		//Long studentID = Long.valueOf(StrStudentID);
-		
+//		long l = Long.valueOf(nStudyProgram).longValue();
+//		String studyProgram = controller.getProgramNameWithLong(l);
 		
 		ArrayList<String> courses = new ArrayList<String>();
 		int i =0;
@@ -37,7 +38,7 @@ public class RegisterServlet extends HttpServlet {
 			i++;
 		}
 		
-		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
+		controller.makeStudent(nStudyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
 		resp.sendRedirect("/index.html");
 		}
 		

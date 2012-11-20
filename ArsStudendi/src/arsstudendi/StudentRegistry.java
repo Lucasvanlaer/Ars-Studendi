@@ -102,11 +102,23 @@ public class StudentRegistry extends Objectifiable{
 	}
 	return null;
 	}
-	public String getCourseNameWithInt(long i) {
+	public String getCourseNameWithLong(long i) {
 	ArrayList<Course> courses = makeCourses();
 	for (Course course : courses) {
 		if (course.getCourseID() == i) {
 			return course.getCourseName();
+		}
+		
+
+	}
+	return null;
+	}
+	
+	public String getProgramNameWithLong(long i) {
+	ArrayList<StudyProgram> programList = makeProgramList(makeCourses());
+	for (StudyProgram studyProgram : programList) {
+		if (studyProgram.getStudyProgramID() == i) {
+			return studyProgram.getStudyProgramName();
 		}
 		
 

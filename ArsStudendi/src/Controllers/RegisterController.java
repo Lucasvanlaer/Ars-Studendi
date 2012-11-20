@@ -3,7 +3,6 @@ package Controllers;
 import java.util.*;
 import arsstudendi.*;
 import DomainModel.*;
-import DomainModel.StudyProgram;
 
 public class RegisterController {
 
@@ -59,4 +58,9 @@ public class RegisterController {
 	public String[] getCourseNames(){
 		return CourseRegistry.getSingletonObject().getCourseNames();
 	}
+	public String getProgramNameWithLong(long i) {
+		String s = StudentRegistry.getSingletonObject().getProgramNameWithLong(i);
+		return s;
+	}
+
 }
