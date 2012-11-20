@@ -44,7 +44,7 @@
 	
 	
 	<div data-role="content">
-		<form id="logIn" action="index.html" method="post">
+		<form id="logIn" action="/index.html" method="post">
 			<div data-role="fieldcontain" class="ui-hide-label">
 				<input type="text" name="emailAdress" id="emailAdress" value="" placeholder="e-mailadress" class="center-button" onchange="emptyFields()"/>
 			</div>

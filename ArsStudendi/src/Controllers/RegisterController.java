@@ -9,23 +9,23 @@ public class RegisterController {
 	public RegisterController (){
 		
 	}
-	public boolean makeStudent(String program, String studentFirstName, String studentLastName, String password, List<String> StrCourses, String newEmailAdress)
+	public boolean makeStudent(String program, String studentFirstName, String studentLastName, String password, List<String> strCourses, String newEmailAdress)
 	{
 		boolean succeed = false;
 //		Long studyP = Long.valueOf(program);
 		// een boolean terug geven of het emailadres geldig is
 		//Tijdelijk wegens niet static
-		StudyProgram studyProgram = StudentRegistry.getSingletonObject().getStudyProgram(program);
-		List<Course> courses = new ArrayList<Course>();
+//		StudyProgram studyProgram = StudentRegistry.getSingletonObject().getStudyProgram(program);
+//		List<Course> courses = new ArrayList<Course>();
 		//Tijdelijk wegens niet static
-		for(String strCourse: StrCourses){
-			if (strCourse != null){
-			Course course = StudentRegistry.getSingletonObject().getCourse(strCourse);
-			courses.add(course);	
-			}
-		}
-		
-	Student student = new Student(studyProgram, studentFirstName, studentLastName, password, courses, newEmailAdress);
+//		for(String strCourse: strCourses){
+//			if (strCourse != null){
+//			Course course = StudentRegistry.getSingletonObject().getCourse(strCourse);
+//			courses.add(course);	
+//			}
+//		}
+//		
+	Student student = new Student(program, studentFirstName, studentLastName, password, strCourses, newEmailAdress);
 	
 	succeed = StudentRegistry.getSingletonObject().putStudent(student);
 

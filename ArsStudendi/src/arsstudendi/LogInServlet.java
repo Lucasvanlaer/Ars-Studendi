@@ -21,7 +21,10 @@ public class LogInServlet extends HttpServlet
 		String emailAdress = req.getParameter("emailAdress");
 		String password = req.getParameter("password");
 
-		student = controller.logIn(password, emailAdress);
+		Student stud = controller.logIn(password, emailAdress);
+		if(controller.testLogin(stud)){
+			student = stud;
+		}
 
 
 

@@ -15,6 +15,13 @@ public class LogController {
 				passWord);
 
 	}
+	
+	public boolean testLogin(Student student){
+		if(student != null){
+			return true;
+		}
+		return false;
+	}
 
 	public void logOut(Student student) {
 		StudentRegistry.getSingletonObject().putStudent(student);
