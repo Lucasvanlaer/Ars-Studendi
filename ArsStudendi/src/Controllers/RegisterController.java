@@ -24,12 +24,15 @@ public class RegisterController {
 //			courses.add(course);	
 //			}
 //		}
-//		
 	Student student = new Student(program, studentFirstName, studentLastName, password, strCourses, newEmailAdress);
-	
 	succeed = StudentRegistry.getSingletonObject().putStudent(student);
 
 	return succeed;
+	}
+	
+	public boolean testUser(String emailAdress){
+		boolean test = StudentRegistry.getSingletonObject().testStudent(emailAdress);
+		return test;
 	}
 	
 	public boolean checkPassword(String password)

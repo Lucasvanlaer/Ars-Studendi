@@ -169,5 +169,12 @@ public class StudentRegistry extends Objectifiable{
 		return getObjectify().get(Student.class, studentID);
 	}
 	
+	public boolean testStudent(String emailAdress){
+		Student student = getObjectify().query(Student.class).filter("emailAdress", emailAdress).get();
+		if (student == null){
+			return true;
+		}
+		return false;
+	}
 	
 }

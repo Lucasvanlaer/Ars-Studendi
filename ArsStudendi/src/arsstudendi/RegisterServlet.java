@@ -37,10 +37,14 @@ public class RegisterServlet extends HttpServlet {
 			}
 			i++;
 		}
-		
+		if(controller.testUser(emailAdress)){
 		controller.makeStudent(nStudyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
 		resp.sendRedirect("/index.html");
 		}
+		else{
+			resp.sendRedirect("/register.jsp");
+		}
+	}
 		
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String[] courseNames = controller.getCourseNames();
