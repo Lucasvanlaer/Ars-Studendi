@@ -42,8 +42,16 @@ public class RegisterServlet extends HttpServlet {
 		resp.sendRedirect("/index.html");
 		}
 		else{
-			resp.sendRedirect("/register.jsp");
-		}
+			req.setAttribute("courseNames", courseNames);
+			
+			try {
+				req.getRequestDispatcher("/register.jsp").forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				System.out.println("ERROR DETECTED");
+				e.printStackTrace();
+		}}
+
 	}
 		
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
