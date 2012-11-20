@@ -21,9 +21,14 @@ public class LogInServlet extends HttpServlet
 		String emailAdress = req.getParameter("emailAdress");
 		String password = req.getParameter("password");
 
-		Student stud = controller.logIn(password, emailAdress);
-		if(controller.testLogin(stud)){
-			student = stud;
+		Student student = controller.logIn(password, emailAdress);
+		if(controller.testLogin(student)){
+			resp.sendRedirect("/index.html");
+			
+		}
+		else
+		{
+			resp.sendRedirect("/home.jsp");
 		}
 
 
