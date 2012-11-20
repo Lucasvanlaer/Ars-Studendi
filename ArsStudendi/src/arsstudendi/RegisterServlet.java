@@ -14,23 +14,29 @@ public class RegisterServlet extends HttpServlet {
 	RegisterController controller = new RegisterController();
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-		String studyProgram = req.getParameter("select-choice-0");		
+			
 		String studentFirstName = req.getParameter("studentFirstName");
 		String studentLastName = req.getParameter("studentLastName");
+		String password = req.getParameter("password");
+		String emailAdress = req.getParameter("emailAdress");
+		String studyProgram = req.getParameter("studyProgram");	
 		//String StrStudentID = req.getParameter ("studentID");
 		//Long studentID = Long.valueOf(StrStudentID);
-		String password = req.getParameter("password");
+		
 		
 		ArrayList<String> courses = new ArrayList<String>();
 		int i =0;
-		while(i != -1){
-			String s = req.getParameter("" + i);
-			if (s == null){
-				i = -1;
+		String[] courseNames = controller.getCourseNames();
+		int length = courseNames.length;
+		while(i < length){
+			String s = new String();
+			s = req.getParameter("" + i);
+			if (s != null){
+				courses.add(s);
 			}
-			courses.add(s);
+			i++;
 		}
-		String emailAdress = req.getParameter("emailAdress");
+		
 		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
 		resp.sendRedirect("/index.html");
 		}
@@ -44,6 +50,7 @@ public class RegisterServlet extends HttpServlet {
 			req.getRequestDispatcher("/register.jsp").forward(req, resp);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
+			System.out.println("ERROR DETECTED");
 			e.printStackTrace();
 	}
 //		String s = null;

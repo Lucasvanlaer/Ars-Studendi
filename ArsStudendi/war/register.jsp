@@ -59,7 +59,7 @@
 	
 	<form action="/register" method="post">
 		<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="studentName" id="studentName" value="" placeholder="First Name" onchange="emptyFields()"/>
+			<input type="text" name="studentFirstName" id="studentFirstName" value="" placeholder="First Name" onchange="emptyFields()"/>
 		</div>
 		
 		<div data-role="fieldcontain" class="ui-hide-label">
@@ -77,12 +77,12 @@
 
 		<label for="select-choice-0" class="select">Study Program</label>
 			<select name="studyProgram" id="studyProgram">
-   			<option value=1>TESTPROGRAM1</option>
-   			<option value=2>TESTPROGRAM2</option>
-   			<option value=3>TESTPROGRAM3</option>
-   			<option value=4>TESTPROGRAM4</option>
-   			<option value=5>TESTPROGRAM5</option>
-   			<option value=6>TESTPROGRAM6</option>
+   			<option value=TESTPROGRAM1>TESTPROGRAM1</option>
+   			<option value=TESTPROGRAM2>TESTPROGRAM2</option>
+   			<option value=TESTPROGRAM3>TESTPROGRAM3</option>
+   			<option value=TESTPROGRAM4>TESTPROGRAM4</option>
+   			<option value=TESTPROGRAM5>TESTPROGRAM5</option>
+   			<option value=TESTPROGRAM6>TESTPROGRAM6</option>
 		</select>
 		
 		<div data-role="fieldcontain">
