@@ -19,8 +19,10 @@ public class RegisterController {
 		List<Course> courses = new ArrayList<Course>();
 		//Tijdelijk wegens niet static
 		for(String strCourse: StrCourses){
+			if (strCourse != null){
 			Course course = StudentRegistry.getSingletonObject().getCourse(strCourse);
 			courses.add(course);	
+			}
 		}
 		
 	Student student = new Student(studyProgram, studentFirstName, studentLastName, password, courses, newEmailAdress);

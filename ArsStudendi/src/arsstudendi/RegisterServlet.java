@@ -31,9 +31,9 @@ public class RegisterServlet extends HttpServlet {
 		int length = courseNames.length;
 		while(i < length){
 			String s = new String();
-			s = req.getParameter("" + i);
+			s = req.getParameter("" + courseNames[i]);
 			if (s != null){
-				courses.add(s);
+				courses.add(courseNames[i]);
 			}
 			i++;
 		}
