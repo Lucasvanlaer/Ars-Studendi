@@ -14,7 +14,7 @@
 </servlet>
 <servlet-mapping>
 <servlet-name>Tracking</servlet-name>
-<url-pattern>/Tracking</url-pattern>
+<url-pattern>/tracking</url-pattern>
 </servlet-mapping>
 
 <servlet>
