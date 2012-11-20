@@ -98,6 +98,16 @@ public class StudentRegistry extends Objectifiable{
 		if (course.getCourseName() == courseName) {
 			return course;
 		}
+
+	}
+	return null;
+	}
+	public Course getCourseOnInt(long i) {
+	ArrayList<Course> courses = makeCourses();
+	for (Course course : courses) {
+		if (course.getCourseID() == i) {
+			return course;
+		}
 		
 
 	}

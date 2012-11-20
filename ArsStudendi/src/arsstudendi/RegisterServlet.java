@@ -21,8 +21,15 @@ public class RegisterServlet extends HttpServlet {
 		//Long studentID = Long.valueOf(StrStudentID);
 		String password = req.getParameter("password");
 		
-		String[] strCourses = req.getParameterValues("courses");
-		List<String> courses = Arrays.asList(strCourses);  
+		ArrayList<String> courses = new ArrayList<String>();
+		int i =0;
+		while(i != -1){
+			String s = req.getParameter("" + i);
+			if (s == null){
+				i = -1;
+			}
+			courses.add(s);
+		}
 		String emailAdress = req.getParameter("emailAdress");
 		controller.makeStudent(studyProgram, studentFirstName,studentLastName , password, courses, emailAdress);
 		resp.sendRedirect("/index.html");

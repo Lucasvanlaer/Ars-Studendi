@@ -94,7 +94,7 @@
 				if( courseNames != null){
 				while(i<courseNames.length) {
 			%>
-			<input type="checkbox" name=<% out.println(courseNames[i]);%> id=<% out.println(courseNames[i]);%> class="custom" value="out.println(courseNames[i])"/>
+			<input type="checkbox" name=<% out.println(courseNames[i]);%> id=<% out.println(courseNames[i]);%> class="custom" value="out.println("" + i);"/>
 			<label for=<% out.println(courseNames[i]);%>> <% out.println(courseNames[i]);%> </label>
 			<% i++; } }%>
 			</fieldset>
