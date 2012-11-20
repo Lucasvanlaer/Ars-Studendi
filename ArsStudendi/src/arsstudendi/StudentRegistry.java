@@ -38,9 +38,9 @@ public class StudentRegistry extends Objectifiable{
 	private ArrayList<Course> makeCourses(){
 		String[] arr = CourseRegistry.getSingletonObject().getCourseNames();
 		ArrayList<Course> courses = new ArrayList<Course>();
-		int length = 6;
-		int i = 1;
-		while (i < length + 1) {
+		int length = arr.length;
+		int i = 0;
+		while (i < length) {
 			Course course = new Course(arr[i], (long) i);
 			courses.add(course);
 			i++;
@@ -52,36 +52,36 @@ public class StudentRegistry extends Objectifiable{
 	ArrayList<Course> courses = courseL;
 	ArrayList<StudyProgram> studyPrograms = new ArrayList<StudyProgram>();
 	int length = 6 ;
-	int i =1;
+	int i =0;
 	String[] arr = StudyProgramRegistry.getSingletonObject().getStudyProgamNames();
-	while (i<length+1){
+	while (i<length){
 		ArrayList<Course> courseList = new ArrayList<Course>();
-		if(i == 1){
+		if(i == 0){
 			courseList.add(courses.get(1)); 
 			courseList.add(courses.get(3)); 
 			courseList.add(courses.get(5)); 
 		}
-		if(i == 2){
+		if(i == 1){
 			courseList.add(courses.get(1)); 
 			courseList.add(courses.get(2)); 
 			courseList.add(courses.get(3)); 
 		}
-		if(i == 3){
+		if(i == 2){
 			courseList.add(courses.get(1)); 
 			courseList.add(courses.get(3)); 
-			courseList.add(courses.get(6)); 
+			courseList.add(courses.get(4)); 
 		}
-		if(i == 4){
+		if(i == 3){
 			courseList.add(courses.get(1)); 
 			courseList.add(courses.get(5)); 
-			courseList.add(courses.get(6)); 
+			courseList.add(courses.get(0)); 
 		}
-		if(i == 5){
+		if(i == 4){
 			courseList.add(courses.get(2)); 
 			courseList.add(courses.get(3)); 
 			courseList.add(courses.get(4)); 
 		}
-		if(i == 6){
+		if(i == 5){
 			courseList.add(courses.get(1)); 
 			courseList.add(courses.get(4)); 
 			courseList.add(courses.get(5)); 
