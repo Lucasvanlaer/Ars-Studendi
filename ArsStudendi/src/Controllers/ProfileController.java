@@ -14,7 +14,7 @@ public class ProfileController {
 		}
 		return succeed;
 	}
-	public boolean changName(Student student, String firstName, String lastName){
+	public boolean changeName(Student student, String firstName, String lastName){
 	boolean succeed = false;
 	if (firstName!= null && lastName!= null && student != null){
 		succeed = true;

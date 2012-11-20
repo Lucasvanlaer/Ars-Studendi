@@ -8,6 +8,14 @@
 <servlet-name>Register</servlet-name>
 <url-pattern>/register</url-pattern>
 </servlet-mapping>
+<servlet>
+<servlet-name>Tracking</servlet-name>
+<servlet-class>arsstudendi.TrackingServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Tracking</servlet-name>
+<url-pattern>/Tracking</url-pattern>
+</servlet-mapping>
 
 <servlet>
 <servlet-name>LogIn</servlet-name>
